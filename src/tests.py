@@ -4,7 +4,7 @@ import unittest
 from src.operation_functions import *
 from src.print_matrix import print_matrix
 
-
+"""
 def manual_test_swapping_rows(matrix, tab_amount="\t"):
     # swapping rows test.
     print(tab_amount,"swapping_rows_test")
@@ -30,7 +30,7 @@ def manual_test_scale_row_from_row_and_number(matrix, tab_amount="\t"):
     scale_row_from_row_and_number(matrix,1, 0, -4, tab_amount=tab_amount)
     print_matrix(matrix,tab_amount)
     return matrix
-
+"""
 
 class UnitTest_Operation_Functions(unittest.TestCase):
 
