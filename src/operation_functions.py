@@ -31,10 +31,14 @@ def scale_row_from_number(matrix, row_in_question, number, tab_amount="\t"):
     tab_amount += "\t"
     print(tab_amount,"row_in_question = ",row_in_question)
     print(tab_amount,"number = ",number)
-    matrix[row_in_question][0] *= number
-    matrix[row_in_question][1] *= number
-    matrix[row_in_question][2] *= number
-    matrix[row_in_question][4] *= number
+    for i in range(len(matrix[row_in_question])):
+        #print(tab_amount+"\t","i = ",i)
+        #print(tab_amount+"\t","matrix[row_in_question][i] = ",matrix[row_in_question][i])
+        if matrix[row_in_question][i] != "|":
+            matrix[row_in_question][i] *= number
+        else:
+            print(tab_amount+"\t\t","i see | so this is a augmented matrix.")
+
     return matrix
 
 def scale_row_from_row_and_number(matrix, row_modified, row_to_be_added, number, tab_amount="\t"):
@@ -50,8 +54,9 @@ def scale_row_from_row_and_number(matrix, row_modified, row_to_be_added, number,
     print(tab_amount,"scale_row_from_row_and_number")
     tab_amount += "\t"
     print(tab_amount,"r",(row_modified+1)," <- r",(row_modified+1)," + ",(number),"r",(row_to_be_added+1))
-    matrix[row_modified][0] = matrix[row_modified][0] + (number * matrix[row_to_be_added][0])
-    matrix[row_modified][1] = matrix[row_modified][1] + (number * matrix[row_to_be_added][1])
-    matrix[row_modified][2] = matrix[row_modified][2] + (number * matrix[row_to_be_added][2])
-    matrix[row_modified][4] = matrix[row_modified][4] + (number * matrix[row_to_be_added][4])
+    for i in range(len(matrix[row_modified])):
+        if matrix[row_modified][i] != "|":
+            matrix[row_modified][i] = matrix[row_modified][i] + (number * matrix[row_to_be_added][i])
+        else:
+            print(tab_amount+"\t\t","i see | so this is a augmented matrix.")
     return matrix
