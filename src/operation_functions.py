@@ -55,6 +55,8 @@ def scale_row_from_row_and_number(matrix, row_modified, row_to_be_added, number,
     tab_amount += "\t"
     print(tab_amount,"r",(row_modified+1)," <- r",(row_modified+1)," + ",(number),"r",(row_to_be_added+1))
     for i in range(len(matrix[row_modified])):
+        print(tab_amount+"\t", ( matrix[row_modified][i] ), " <- ", matrix[row_modified][i], " + ", (number), " * ", matrix[row_to_be_added][i])
+        print(tab_amount+"\t\t", ( matrix[row_modified][i] + (number * matrix[row_to_be_added][i]) ), " <- ", matrix[row_modified][i], " + ", (number) * matrix[row_to_be_added][i])
         if matrix[row_modified][i] != "|":
             matrix[row_modified][i] = matrix[row_modified][i] + (number * matrix[row_to_be_added][i])
         else:

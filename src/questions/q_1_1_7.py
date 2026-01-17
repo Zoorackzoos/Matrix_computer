@@ -17,7 +17,7 @@ def q_1_1_5(tab_amount="\t"):
     scale_row_from_row_and_number(question_matrix,2, 0, 4, tab_amount)
     print_matrix(question_matrix)
     scale_row_from_row_and_number(question_matrix,2, 1, 4, tab_amount)
-    print_matrix(question_matrix,tab_amount)
+    print_matrix(question_matrix, tab_amount)
 
 def q_1_1_7(tab_amount="\t"):
     print(tab_amount,"q_1_1_7")
