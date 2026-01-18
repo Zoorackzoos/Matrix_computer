@@ -27,7 +27,7 @@ def float_to_fraction_string(value: float, max_denominator: int = 20):
     - If the denominator exceeds `max_denominator`, the float is returned.
     """
 
-    if value == "|":
+    if value == "|" or value == "h" or value == "k":
         return value
     # Handle exact integers immediately
     if value.is_integer():
