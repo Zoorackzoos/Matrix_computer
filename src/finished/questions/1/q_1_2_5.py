@@ -1,5 +1,5 @@
-from src.print_matrix import *
-from src.operation_functions import *
+from src.finished.print_matrix import *
+from src.finished.operation_functions import *
 
 def q_1_2_5(tab_amount="\t"):
     print(tab_amount,"q_1_2_5")

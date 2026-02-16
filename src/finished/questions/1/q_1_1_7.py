@@ -1,5 +1,5 @@
-from src.operation_functions import scale_row_from_number, scale_row_from_row_and_number
-from src.print_matrix import print_matrix
+from src.finished.operation_functions import scale_row_from_number, scale_row_from_row_and_number
+from src.finished.print_matrix import print_matrix
 
 
 def q_1_1_5(tab_amount="\t"):

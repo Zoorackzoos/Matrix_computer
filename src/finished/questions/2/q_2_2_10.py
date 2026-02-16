@@ -8,8 +8,8 @@ V = [_ _ _ _]
 
 """
 
-from src.print_matrix import print_matrix
-from src.operation_functions import *
+from src.finished.print_matrix import print_matrix
+from src.finished.operation_functions import *
 
 def q_2_2_10(tab_amount="\t"):
     print(tab_amount,"q_2_2_10")

@@ -1,8 +1,8 @@
 import inspect
 import unittest
 
-from src.operation_functions import *
-from src.print_matrix import print_matrix
+from src.finished.operation_functions import *
+from src.finished.print_matrix import print_matrix
 
 """
 def manual_test_swapping_rows(matrix, tab_amount="\t"):
