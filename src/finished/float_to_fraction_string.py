@@ -1,7 +1,14 @@
 from fractions import Fraction
 
-def float_to_fraction_string(value: float, max_denominator: int = 20):
+def float_to_fraction_string(value: float, max_denominator: int = 100):
     """
+    duncan doc-u-string:
+    i had a issue where 7/27 & 2/27 were not appearing as their fractions selves, instead decimals.
+    if you want to underload fraction library calls, make the max_denominator int a 20.
+    if you want to see a larger fraction, increase the chance of seeing it instead of a decimal.
+    increase the max denominator variable.
+
+    chat doc-u-string:
     Convert a float into a fraction string if it can be represented cleanly.
 
     Parameters
