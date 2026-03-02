@@ -70,14 +70,14 @@ if __name__ == "__main__":
     print("program stated")
     matrix_a = \
         [
-            [2, 5, 6],
-            [-3, -7, 1]
+            [3, 2],
+            [-3, -1],
+            [-2, 0]
         ]
     matrix_b = \
         [
-            [-7, -5, 2],
-            [3, 2, 5],
-            [21, 4, 1],
+            [3, -2],
+            [1, 3]
         ]
     result_matrix = multiply_matrix_universal(matrix_a=matrix_a, matrix_b=matrix_b, tab_amount="\t")
     print_matrix(result_matrix)
