@@ -1,4 +1,6 @@
 from src.matrix_operations.get_REF import *
+from src.matrix_operations.get_diagonal_values_from_matrix import get_diagonal_values_from_matrix
+
 
 def get_determinant_two_by_two_matrix(matrix, tab_amount="\t"):
     """
@@ -23,15 +25,6 @@ def get_determinant_based_on_list_of_fed_values(list_of_fed_values, tab_amount="
         print(tab_amount,"* ",element)
     tab_amount += "\t"
     print(tab_amount,total)
-
-def get_diagonal_values_from_matrix(matrix_in_question,tab_amount="\t"):
-    print(tab_amount,"get_diagonal_values_from_matrix")
-    tab_amount += "\t"
-
-    diagonal_values_list = []
-    for diagonal_index in range(len(matrix_in_question)):
-        diagonal_values_list.append(matrix_in_question[diagonal_index][diagonal_index])
-    return diagonal_values_list
 
 def get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(list_with_REF_matrix_and_scaler_operations_in_it,tab_amount="\t"):
     print(tab_amount,"get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it")
@@ -61,7 +54,7 @@ if __name__ == "__main__":
 
     tab_amount = "\t"
 
-    REF_of_matrix_in_question_and_its_determinant_values = get_REF_and_return_determinant_values(matrix_in_question=matrix_in_question,tab_amount=tab_amount)
+    REF_of_matrix_in_question_and_its_determinant_values = get_list_with_REF_and_return_determinant_values(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
 
     print_matrix(REF_of_matrix_in_question_and_its_determinant_values[0],tab_amount=tab_amount)
     print(tab_amount,REF_of_matrix_in_question_and_its_determinant_values[1])

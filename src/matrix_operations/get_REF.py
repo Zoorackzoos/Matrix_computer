@@ -120,59 +120,7 @@ def get_REF(matrix_in_question,tab_amount="\t"):
         row_index_b = row_index_a
     return matrix_in_question
 
-def GPT_get_REF(matrix_in_question, tab_amount="\t"):
-    """
-    kind've a piece of junk
-
-    :param matrix_in_question:
-    :param tab_amount:
-    :return:
-    """
-    print(tab_amount, "get_REF")
-    tab_amount += "\t"
-
-    if len(matrix_in_question) == 0:
-        return matrix_in_question
-
-    num_rows = len(matrix_in_question)
-    num_cols = len(matrix_in_question[0])
-
-    pivot_row = 0
-
-    for col in range(num_cols):
-        if pivot_row >= num_rows:
-            break
-
-        # 🔹 Find pivot
-        pivot = None
-        for r in range(pivot_row, num_rows):
-            if matrix_in_question[r][col] != 0:
-                pivot = r
-                break
-
-        if pivot is None:
-            continue
-
-        # 🔹 Swap rows if needed
-        if pivot != pivot_row:
-            matrix_in_question[pivot_row], matrix_in_question[pivot] = \
-                matrix_in_question[pivot], matrix_in_question[pivot_row]
-
-
-        # 🔹 Eliminate below
-        for r in range(pivot_row + 1, num_rows):
-            if matrix_in_question[r][col] != 0:
-                factor = matrix_in_question[r][col] / matrix_in_question[pivot_row][col]
-
-                for c in range(col, num_cols):
-                    matrix_in_question[r][c] -= factor * matrix_in_question[pivot_row][c]
-
-        pivot_row += 1
-
-
-    return matrix_in_question
-
-def get_REF_and_return_determinant_values(matrix_in_question,tab_amount="\t"):
+def get_list_with_REF_and_return_determinant_values(matrix_in_question, tab_amount="\t"):
     """
     gets the reduced echelon form but in a different return value way
 
@@ -189,9 +137,9 @@ def get_REF_and_return_determinant_values(matrix_in_question,tab_amount="\t"):
                 because once you get the REF you would multiply
                 the diagonals and the scalers as fractions
 
-    :param matrix_in_question:
-    :param tab_amount:
-    :return:
+    :param matrix_in_question: a matrix of any reasonable size
+    :param tab_amount: variations of "\t"
+    :return: a list that contains the matrix given with REF without normalization. that means that all the pivots are not 1s.
     """
     print(tab_amount,"get_REF")
     tab_amount += "\t"
@@ -335,7 +283,7 @@ def in_file_test_get_REF_and_return_determinant_values():
             [-5, -1, 9, 4]
         ]
     tab_amount = "\t"
-    output_matrix_and_operation_values_List = get_REF_and_return_determinant_values(matrix_in_question=matrix_in_question,tab_amount=tab_amount)
+    output_matrix_and_operation_values_List = get_list_with_REF_and_return_determinant_values(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
     print_matrix(matrix=output_matrix_and_operation_values_List[0],tab_amount=tab_amount)
     print(output_matrix_and_operation_values_List[1])
 

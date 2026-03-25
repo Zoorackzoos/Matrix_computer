@@ -1,6 +1,3 @@
-from src.display.print_matrix import *
-from src.matrix_operations.operation_functions import *
-from src.matrix_operations.find_determinant import *
 from src.matrix_operations.vector_multiplier import *
 
 def get_if_matrix_is_all_zeros(matrix_in_question, tab_amount="\t"):

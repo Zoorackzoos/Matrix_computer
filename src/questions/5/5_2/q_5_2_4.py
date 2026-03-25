@@ -1,44 +1,25 @@
 from src.display.print_matrix import *
-from src.matrix_operations.operation_functions import *
+from src.matrix_operations.check_if_matrix_is_all_zeros import *
 from src.matrix_operations.find_determinant import *
+from src.matrix_operations.get_REF import *
+from src.matrix_operations.operation_functions import *
+from src.matrix_operations.set_matrix_pivots_into_ones import *
 from src.matrix_operations.vector_multiplier import *
 
 def q_5_2_4_a(tab_amount="\t"):
+    print(tab_amount,"q_5_2_4_a")
+    tab_amount += "\t"
+
     matrix_a = \
     [
         [-5,1,11,3],
-        [-5,-5,3,3],
+        [-4,-5,3,3],
         [2,3,-1,4],
         [-5,-1,9,4]
     ]
-    scale_row_from_number(matrix=matrix_a,row_in_question=0,number=-1,tab_amount=tab_amount)
-    # * -1
-    scale_row_from_row_and_number(matrix=matrix_a,row_modified=1,row_to_be_added=0,number=1,tab_amount=tab_amount)
-    scale_row_from_row_and_number(matrix=matrix_a,row_modified=3,row_to_be_added=0,number=1,tab_amount=tab_amount)
-
-    scale_row_from_number(matrix=matrix_a,row_in_question=0,number=2,tab_amount=tab_amount)
-    scale_row_from_number(matrix=matrix_a,row_in_question=2,number=-5,tab_amount=tab_amount)
-    # * -1 * 1/2 * -1/5
-    scale_row_from_row_and_number(matrix=matrix_a,row_modified=2,row_to_be_added=0,number=1,tab_amount=tab_amount)
-
-    scale_row_from_number(matrix=matrix_a,row_in_question=1,number=-17,tab_amount=tab_amount)
-    scale_row_from_number(matrix=matrix_a,row_in_question=2,number=6,tab_amount=tab_amount)
-    # * 1/-17 * 1/6
-    scale_row_from_row_and_number(matrix=matrix_a,row_modified=2,row_to_be_added=1,number=1,tab_amount=tab_amount)
-
-    scale_row_from_number(matrix=matrix_a,row_in_question=3,number=51,tab_amount=tab_amount)
-    # * 1/51
-    scale_row_from_row_and_number(matrix=matrix_a,row_modified=3,row_to_be_added=1,number=1,tab_amount=tab_amount)
-
-    scale_row_from_number(matrix=matrix_a,row_in_question=3,number=-1,tab_amount=tab_amount)
-    # * -1
-    scale_row_from_row_and_number(matrix=matrix_a,row_modified=3,row_to_be_added=2,number=1,tab_amount=tab_amount)
-
-    print_matrix(matrix=matrix_a,tab_amount=tab_amount)
-
-    list_of_fed_values = [-1,1/2,-1/5,1/-17,1/6,1/51,-1,10,102,34,-207]
-    get_determinant_based_on_list_of_fed_values(list_of_fed_values=list_of_fed_values, tab_amount=tab_amount)
-    #I don't think this is correct :-/
+    matrix_a_REF_and_scaler_ops_list = get_list_with_REF_and_return_determinant_values(matrix_in_question=matrix_a,tab_amount=tab_amount)
+    determinant = get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(list_with_REF_matrix_and_scaler_operations_in_it=matrix_a_REF_and_scaler_ops_list,tab_amount=tab_amount)
+    print(tab_amount,"determinant = ",determinant)
 
 def q_5_2_4_b(tab_amount="\t"):
     matrix_b = \
