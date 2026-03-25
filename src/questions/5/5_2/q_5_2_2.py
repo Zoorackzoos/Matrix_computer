@@ -25,7 +25,7 @@ def q_5_2_2(tab_amount = "\t"):
     print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
 
     list_of_fed_values = [1/-1,1/-3,1/2,1/-1,1/-6,6,-6,-13]
-    find_determinant_based_on_list_of_fed_values(list_of_fed_values=list_of_fed_values)
+    get_determinant_based_on_list_of_fed_values(list_of_fed_values=list_of_fed_values)
 
 if __name__ == "__main__":
     q_5_2_2(tab_amount="")

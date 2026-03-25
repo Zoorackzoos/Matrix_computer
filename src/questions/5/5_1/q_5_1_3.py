@@ -45,7 +45,7 @@ def q_5_1_3(tab_amount="\t"):
     print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
 
     list_of_fed_values = [-126,-7650,-84,19278,-1,-1,-1,1/7,1/9,1/-2,1/17,1/2,1/63,1/225,1/34]
-    find_determinant_based_on_list_of_fed_values(list_of_fed_values=list_of_fed_values, tab_amount=tab_amount)
+    get_determinant_based_on_list_of_fed_values(list_of_fed_values=list_of_fed_values, tab_amount=tab_amount)
 
 if __name__ == "__main__":
     q_5_1_3(tab_amount="")

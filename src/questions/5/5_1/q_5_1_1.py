@@ -8,7 +8,7 @@ def q_5_1_1(tab_amount="\t"):
         [-9,-4],
         [-4,-3]
     ]
-    find_determinant_two_by_two_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
+    get_determinant_two_by_two_matrix(matrix=matrix_in_question, tab_amount=tab_amount)
 
 if __name__ == "__main__":
     q_5_1_1(tab_amount="")
