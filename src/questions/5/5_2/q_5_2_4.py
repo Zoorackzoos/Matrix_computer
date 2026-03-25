@@ -3,7 +3,7 @@ from src.matrix_operations.operation_functions import *
 from src.matrix_operations.find_determinant import *
 from src.matrix_operations.vector_multiplier import *
 
-def q_5_2_3_a(tab_amount="\t"):
+def q_5_2_4_a(tab_amount="\t"):
     matrix_a = \
     [
         [-5,1,11,3],
@@ -40,4 +40,4 @@ def q_5_2_3_a(tab_amount="\t"):
     find_determinant_based_on_list_of_fed_values(list_of_fed_values=list_of_fed_values,tab_amount=tab_amount)
 
 if __name__ == "__main__":
-    q_5_2_3_a(tab_amount="")
+    q_5_2_4_a(tab_amount="")

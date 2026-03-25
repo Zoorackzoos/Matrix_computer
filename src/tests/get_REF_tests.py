@@ -6,44 +6,44 @@ from src.matrix_operations.get_REF import *
 class UnitTest_get_REF(unittest.TestCase):
 
     def test_no_list_matrix_edge_case(self, tab_amount=""):
-        print(tab_amount,inspect.currentframe().f_code.co_name)
+        print(tab_amount, inspect.currentframe().f_code.co_name)
         tab_amount += "\t"
 
         original_matrix = \
-        [
+            [
 
-        ]
+            ]
 
-        matrix_output = get_REF(matrix_in_question=original_matrix,tab_amount=tab_amount)
+        matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)
 
         correct_matrix = \
-        [
+            [
 
-        ]
+            ]
 
         self.assertEqual(matrix_output, correct_matrix)
 
     def test_matrix_all_zeros_edge_case(self, tab_amount=""):
-        print(tab_amount,inspect.currentframe().f_code.co_name)
+        print(tab_amount, inspect.currentframe().f_code.co_name)
         tab_amount += "\t"
         original_matrix = \
-        [
-            [0,0,0],
-            [0,0,0],
-            [0,0,0]
-        ]
+            [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]
+            ]
         correct_matrix = \
-        [
-            [0, 0, 0],
-            [0, 0, 0],
-            [0, 0, 0]
-        ]
+            [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]
+            ]
 
-        matrix_output = get_REF(matrix_in_question=original_matrix,tab_amount=tab_amount)
+        matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)
         self.assertEqual(matrix_output, correct_matrix)
 
     def test_one_two_three_matrix(self, tab_amount=""):
-        print(tab_amount,inspect.currentframe().f_code.co_name)
+        print(tab_amount, inspect.currentframe().f_code.co_name)
         tab_amount += "\t"
 
         """
@@ -64,5 +64,35 @@ class UnitTest_get_REF(unittest.TestCase):
                 [0, 72, 144],
                 [0, 0, 0]
             ]
-        matrix_output = get_REF(matrix_in_question=original_matrix,tab_amount=tab_amount)
+        matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)
+        self.assertEqual(matrix_output, correct_matrix)
+
+    def test_q_5_2_4(self, tab_amount="\t"):
+        print(tab_amount, inspect.currentframe().f_code.co_name)
+        tab_amount += "\t"
+
+        original_matrix = \
+            [
+                [-5, 1, 11, 3],
+                [-4, -5, 3, 3],
+                [2, 3, -1, 4],
+                [-5, -1, 9, 4]
+            ]
+        """
+        correct_matrix = \
+            [
+                [10, -2, -22, -6],
+                [0, 102, 136, 0],
+                [0, 0, 34, -156],
+                [0, 0, 0, -207]
+            ]
+        """
+        correct_matrix = \
+            [
+                [-200, 40, 440, 120],
+                [0, 157760, 157760, -16320],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0]
+            ]
+        matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)
         self.assertEqual(matrix_output, correct_matrix)
