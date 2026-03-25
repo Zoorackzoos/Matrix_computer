@@ -81,10 +81,10 @@ class UnitTest_get_REF(unittest.TestCase):
 
         correct_matrix = \
             [
-                [10, -2, -22, -6],
-                [0, 102, 136, 0],
-                [0, 0, 34, -156],
-                [0, 0, 0, -207]
+                [-200, 40, 440, 120],
+                [0, 157760, 157760, -16320],
+                [0, 0, 0, -201443200],
+                [0, 0, 0, 0]
             ]
 
         matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)

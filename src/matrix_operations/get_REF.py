@@ -2,21 +2,12 @@ import copy
 import numbers
 
 from src.display.print_matrix import *
+from src.matrix_operations.check_if_matrix_is_all_zeros import get_if_matrix_is_all_zeros
 from src.matrix_operations.operation_functions import *
 from src.matrix_operations.find_determinant import *
+from src.matrix_operations.set_matrix_pivots_into_ones import set_matrix_pivots_into_ones
 from src.matrix_operations.vector_multiplier import *
 
-def get_if_matrix_is_all_zeros(matrix_in_question, tab_amount="\t"):
-    print(tab_amount,"check_if_matrix_is_all_zeros")
-    tab_amount += "\t"
-    print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
-    for row in matrix_in_question:
-        for column in row:
-            if column != 0:
-                return False
-    return True
-
-#TODO: finish implementing this dog ahh function
 def get_REF(matrix_in_question,tab_amount="\t"):
     """
     gets row echelon form
@@ -84,13 +75,22 @@ def get_REF(matrix_in_question,tab_amount="\t"):
         print(tab_amount, "row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
         print(tab_amount, "row_index_b < num_of_rows = ", row_index_b < num_of_rows)
 
+        able_to_go = False
+        while able_to_go == False:
+            if column_index_shared < num_of_columns:
+                if matrix_in_question[row_index_a][column_index_shared] != 0:
+                    able_to_go = True
+                else:
+                    column_index_shared += 1
+            else:
+                return matrix_in_question
+
         while row_index_b < num_of_rows:
 
             print(tab_amount + "\t", "row_index_b = ", row_index_b)
             print(tab_amount + "\t", "row_index_b < num_of_rows = ", "row_index_b < num_of_rows")
             print(tab_amount + "\t", "row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
             print(tab_amount + "\t", "row_index_b < num_of_rows = ", row_index_b < num_of_rows)
-
 
             # if we're comparing the same rule. do nothing
             if matrix_in_question[row_index_a] == matrix_in_question[row_index_b]:
@@ -134,21 +134,83 @@ def get_REF(matrix_in_question,tab_amount="\t"):
                 print(tab_amount+"\t\t","row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
         print(tab_amount,"back to row_index_a loop")
 
+        """
+        if column_index_shared == 1:
+            print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
+            exit(999)
+        """
+
         row_index_a += 1
         column_index_shared += 1
         row_index_b = row_index_a
     return matrix_in_question
 
+def GPT_get_REF(matrix_in_question, tab_amount="\t"):
+    """
+    kind've a piece of junk
+
+    :param matrix_in_question:
+    :param tab_amount:
+    :return:
+    """
+    print(tab_amount, "get_REF")
+    tab_amount += "\t"
+
+    if len(matrix_in_question) == 0:
+        return matrix_in_question
+
+    num_rows = len(matrix_in_question)
+    num_cols = len(matrix_in_question[0])
+
+    pivot_row = 0
+
+    for col in range(num_cols):
+        if pivot_row >= num_rows:
+            break
+
+        # 🔹 Find pivot
+        pivot = None
+        for r in range(pivot_row, num_rows):
+            if matrix_in_question[r][col] != 0:
+                pivot = r
+                break
+
+        if pivot is None:
+            continue
+
+        # 🔹 Swap rows if needed
+        if pivot != pivot_row:
+            matrix_in_question[pivot_row], matrix_in_question[pivot] = \
+                matrix_in_question[pivot], matrix_in_question[pivot_row]
+
+
+        # 🔹 Eliminate below
+        for r in range(pivot_row + 1, num_rows):
+            if matrix_in_question[r][col] != 0:
+                factor = matrix_in_question[r][col] / matrix_in_question[pivot_row][col]
+
+                for c in range(col, num_cols):
+                    matrix_in_question[r][c] -= factor * matrix_in_question[pivot_row][c]
+
+        pivot_row += 1
+
+
+    return matrix_in_question
+
+
+
 if __name__ == "__main__":
     print("start of program")
     matrix_in_question = \
-    [
-        [1,2,3],
-        [4,5,6],
-        [7,8,9]
-    ]
+        [
+            [-5, 1, 11, 3],
+            [-4, -5, 3, 3],
+            [2, 3, -1, 4],
+            [-5, -1, 9, 4]
+        ]
     tab_amount = "\t"
-    get_REF(matrix_in_question=matrix_in_question,tab_amount=tab_amount)
+    matrix_in_question = get_REF(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
+    matrix_in_question = set_matrix_pivots_into_ones(matrix_in_question=matrix_in_question,tab_amount=tab_amount)
 
     print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
     print("end of program")
