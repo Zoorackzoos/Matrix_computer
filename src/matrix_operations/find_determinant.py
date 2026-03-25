@@ -12,7 +12,7 @@ def find_determinant_two_by_two_matrix(matrix, tab_amount="\t"):
     print(tab_amount,return_value)
     return return_value
 
-def find_determinant_based_on_fed_array_values(list_of_fed_values,tab_amount="\t"):
+def find_determinant_based_on_list_of_fed_values(list_of_fed_values, tab_amount="\t"):
     print(tab_amount,list_of_fed_values)
     tab_amount += "\t"
     total = 1
