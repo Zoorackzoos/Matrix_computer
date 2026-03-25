@@ -33,25 +33,32 @@ def get_REF(matrix_in_question,tab_amount="\t"):
     tab_amount += "\t"
 
     num_of_rows = len(matrix_in_question)
+    num_of_columns = len(matrix_in_question[0])
     """
     1 2 3 -> 4 8 12 -> 4 8 12 ->28  56  84-> 28 56 84-> 20 56  84-> 20 56 84
     4 5 6    -4 -5 -6  0 3 6    0   3   6    0  3  6    0  72  144  0  72 144
     7 8 9    7 8 9     7 8 9    -28 -32 -36  0  24 48   0 -72 -144  0  0  0
     """
     print(num_of_rows)
-    for i in range(num_of_rows):
-        old_matrix_in_question = copy.deepcopy(matrix_in_question)
+    row_index = 0
+    column_index = 0
 
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=i,number=old_matrix_in_question[i+1][i],tab_amount=tab_amount)
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=i+1,number=old_matrix_in_question[i][i],tab_amount=tab_amount)
+    all_zero_row_bool = False
 
-        if matrix_in_question[i][i] > 0 and matrix_in_question[i + 1][i] > 0:
-            scale_row_from_number(matrix=matrix_in_question,row_in_question=i+1,number=-1,tab_amount=tab_amount)
+    while row_index <= num_of_rows:
+        while column_index <= num_of_rows:
+            old_matrix_in_question = copy.deepcopy(matrix_in_question)
 
-        scale_row_from_row_and_number(matrix=matrix_in_question,row_modified=i+1,row_to_be_added=i,number=1,tab_amount=tab_amount)
+            scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index,number=old_matrix_in_question[row_index+1][row_index],tab_amount=tab_amount)
+            scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index+1,number=old_matrix_in_question[row_index][row_index],tab_amount=tab_amount)
 
-        print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
-        exit(999)
+            if matrix_in_question[row_index][row_index] > 0 and matrix_in_question[row_index + 1][row_index] > 0:
+                scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index+1,number=-1,tab_amount=tab_amount)
+
+            scale_row_from_row_and_number(matrix=matrix_in_question,row_modified=row_index+1,row_to_be_added=row_index,number=1,tab_amount=tab_amount)
+
+            print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
+            exit(999)
 
 if __name__ == "__main__":
     print("start of program")
