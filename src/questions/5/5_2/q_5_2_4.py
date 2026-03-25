@@ -38,6 +38,7 @@ def q_5_2_4_a(tab_amount="\t"):
 
     list_of_fed_values = [-1,1/2,-1/5,1/-17,1/6,1/51,-1,10,102,34,-207]
     find_determinant_based_on_list_of_fed_values(list_of_fed_values=list_of_fed_values,tab_amount=tab_amount)
+    #I don't think this is correct :-/
 
 def q_5_2_4_b(tab_amount="\t"):
     matrix_b = \

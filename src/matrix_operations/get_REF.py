@@ -9,29 +9,6 @@ from src.matrix_operations.set_matrix_pivots_into_ones import set_matrix_pivots_
 from src.matrix_operations.vector_multiplier import *
 
 def get_REF(matrix_in_question,tab_amount="\t"):
-    """
-    gets row echelon form
-
-    example operations done by this function:
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=0,number=4,tab_amount=tab_amount)
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=1,number=1,tab_amount=tab_amount)
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=1,number=-1,tab_amount=tab_amount)
-        scale_row_from_row_and_number(matrix=matrix_in_question,row_modified=1,row_to_be_added=0,number=1,tab_amount=tab_amount)
-
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=0,number=7,tab_amount=tab_amount)
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=2,number=4,tab_amount=tab_amount)
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=2,number=-1,tab_amount=tab_amount)
-        scale_row_from_row_and_number(matrix=matrix_in_question,row_modified=2,row_to_be_added=0,number=1,tab_amount=tab_amount)
-
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=1,number=24,tab_amount=tab_amount)
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=2,number=3,tab_amount=tab_amount)
-        scale_row_from_number(matrix=matrix_in_question,row_in_question=2,number=-1,tab_amount=tab_amount)
-        scale_row_from_row_and_number(matrix=matrix_in_question,row_modified=2,row_to_be_added=1,number=1,tab_amount=tab_amount)
-
-    :param matrix_in_question: just a matrix. doesn't matter the size
-    :param tab_amount: various amounts of "\t". like "\t\t" or "\t\t\t"
-    :return: nothing. somehow matrix in question changes when fed into functions despite not returning.
-    """
     print(tab_amount,"get_REF")
     tab_amount += "\t"
 
