@@ -12,10 +12,11 @@ def get_if_matrix_is_all_zeros(matrix_in_question, tab_amount="\t"):
     print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
     for row in matrix_in_question:
         for column in row:
-            if isinstance(column, numbers.Number):
+            if column != 0:
                 return False
     return True
 
+#TODO: finish implementing this dog ahh function
 def get_REF(matrix_in_question,tab_amount="\t"):
     """
     gets row echelon form
@@ -83,7 +84,7 @@ def get_REF(matrix_in_question,tab_amount="\t"):
         print(tab_amount, "row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
         print(tab_amount, "row_index_b < num_of_rows = ", row_index_b < num_of_rows)
 
-        while row_index_b < num_of_columns:
+        while row_index_b < num_of_rows:
 
             print(tab_amount + "\t", "row_index_b = ", row_index_b)
             print(tab_amount + "\t", "row_index_b < num_of_rows = ", "row_index_b < num_of_rows")

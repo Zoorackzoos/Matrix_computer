@@ -78,7 +78,7 @@ class UnitTest_get_REF(unittest.TestCase):
                 [2, 3, -1, 4],
                 [-5, -1, 9, 4]
             ]
-        """
+
         correct_matrix = \
             [
                 [10, -2, -22, -6],
@@ -86,13 +86,6 @@ class UnitTest_get_REF(unittest.TestCase):
                 [0, 0, 34, -156],
                 [0, 0, 0, -207]
             ]
-        """
-        correct_matrix = \
-            [
-                [-200, 40, 440, 120],
-                [0, 157760, 157760, -16320],
-                [0, 0, 0, 0],
-                [0, 0, 0, 0]
-            ]
+
         matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)
         self.assertEqual(matrix_output, correct_matrix)
