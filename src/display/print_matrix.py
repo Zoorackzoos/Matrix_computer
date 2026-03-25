@@ -2,7 +2,6 @@ from src.display.float_to_fraction_string import float_to_fraction_string
 
 def print_matrix(matrix, tab_amount="\t"):
     print(tab_amount,"print_matrix")
-    return_string = ""
     for row in matrix:
         print(tab_amount+"\t",row)
 
