@@ -74,39 +74,46 @@ def get_REF(matrix_in_question,tab_amount="\t"):
             else:
                 old_matrix_in_question = copy.deepcopy(matrix_in_question)
 
-                #multiplying the rows
-                print(tab_amount+"\t\t","multiplying the rows so we can get a pivot when we find the sum of both of them easier.")
-                scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index_a,number=old_matrix_in_question[row_index_b][column_index_shared],tab_amount=tab_amount+"\t\t\t")
-                scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index_b,number=old_matrix_in_question[row_index_a][column_index_shared],tab_amount=tab_amount+"\t\t\t")
-
-                #dealing with both positive and both negative rows.
-                print(tab_amount+"\t\t",f"is row {row_index_a} and row {row_index_b} both positive or both negative?")
-                both_rows_positive = (matrix_in_question[row_index_a][column_index_shared] > 0
-                                        and
-                                        matrix_in_question[row_index_b][column_index_shared] > 0)
-                both_rows_negative = (matrix_in_question[row_index_a][column_index_shared] < 0
-                                        and
-                                        matrix_in_question[row_index_b][column_index_shared] < 0)
-
-                if both_rows_positive or both_rows_negative:
-                    print(tab_amount+"\t\t\t",f"They were either both positive or negative. So i set row {row_index_b} * -1")
-                    scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index_b,number=-1,tab_amount=tab_amount+"\t\t\t")
+                #if the row below contains a zero on our column_index_shared
+                if (old_matrix_in_question[row_index_a][column_index_shared] == 0
+                or
+                old_matrix_in_question[row_index_b][column_index_shared] == 0):
+                    print(tab_amount+"\t\t",f"either old_matrix_in_question[{row_index_a}][{column_index_shared}] or old_matrix_in_question[{row_index_b}][{column_index_shared}] is a 0. so no multiplication occurs here.")
+                    row_index_b += 1
                 else:
-                    print(tab_amount+"\t\t\t","they were opposite signs so no operation needed.")
+                    #multiplying the rows
+                    print(tab_amount+"\t\t","multiplying the rows so we can get a pivot when we find the sum of both of them easier.")
+                    scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index_a,number=old_matrix_in_question[row_index_b][column_index_shared],tab_amount=tab_amount+"\t\t\t")
+                    scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index_b,number=old_matrix_in_question[row_index_a][column_index_shared],tab_amount=tab_amount+"\t\t\t")
 
-                #finding the sum of the 2 rows
-                print(tab_amount+"\t\t","finding the sum of the 2 rows.")
-                scale_row_from_row_and_number(matrix=matrix_in_question,row_modified=row_index_b,row_to_be_added=row_index_a,number=1,tab_amount=tab_amount+"\t\t\t")
+                    #dealing with both positive and both negative rows.
+                    print(tab_amount+"\t\t",f"is row {row_index_a} and row {row_index_b} both positive or both negative?")
+                    both_rows_positive = (matrix_in_question[row_index_a][column_index_shared] > 0
+                                            and
+                                            matrix_in_question[row_index_b][column_index_shared] > 0)
+                    both_rows_negative = (matrix_in_question[row_index_a][column_index_shared] < 0
+                                            and
+                                            matrix_in_question[row_index_b][column_index_shared] < 0)
 
-                #compare and contrast matrices.
-                print(tab_amount+"\t\t","matrix_in_question")
-                print_matrix(matrix=matrix_in_question,tab_amount=tab_amount+"\t\t\t")
-                print(tab_amount+"\t\t","old_matrix_in_question")
-                print_matrix(matrix=old_matrix_in_question,tab_amount=tab_amount+"\t\t\t")
+                    if both_rows_positive or both_rows_negative:
+                        print(tab_amount+"\t\t\t",f"They were either both positive or negative. So i set row {row_index_b} * -1")
+                        scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index_b,number=-1,tab_amount=tab_amount+"\t\t\t")
+                    else:
+                        print(tab_amount+"\t\t\t","they were opposite signs so no operation needed.")
 
-                row_index_b += 1
-                print(tab_amount+"\t\t","reiterating row_index_b loop")
-                print(tab_amount+"\t\t","row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
+                    #finding the sum of the 2 rows
+                    print(tab_amount+"\t\t","finding the sum of the 2 rows.")
+                    scale_row_from_row_and_number(matrix=matrix_in_question,row_modified=row_index_b,row_to_be_added=row_index_a,number=1,tab_amount=tab_amount+"\t\t\t")
+
+                    #compare and contrast matrices.
+                    print(tab_amount+"\t\t","matrix_in_question")
+                    print_matrix(matrix=matrix_in_question,tab_amount=tab_amount+"\t\t\t")
+                    print(tab_amount+"\t\t","old_matrix_in_question")
+                    print_matrix(matrix=old_matrix_in_question,tab_amount=tab_amount+"\t\t\t")
+
+                    row_index_b += 1
+                    print(tab_amount+"\t\t","reiterating row_index_b loop")
+                    print(tab_amount+"\t\t","row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
         print(tab_amount,"back to row_index_a loop")
 
         """

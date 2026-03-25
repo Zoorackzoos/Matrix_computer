@@ -67,7 +67,7 @@ class UnitTest_get_REF(unittest.TestCase):
         matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)
         self.assertEqual(matrix_output, correct_matrix)
 
-    def test_q_5_2_4(self, tab_amount="\t"):
+    def test_q_5_2_4_a(self, tab_amount="\t"):
         print(tab_amount, inspect.currentframe().f_code.co_name)
         tab_amount += "\t"
 
@@ -87,5 +87,31 @@ class UnitTest_get_REF(unittest.TestCase):
                 [0, 0, 0, 0]
             ]
 
+        matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)
+        self.assertEqual(matrix_output, correct_matrix)
+
+    def test_q_5_2_4_b(self,tab_amount="\t"):
+        print(tab_amount, inspect.currentframe().f_code.co_name)
+        tab_amount += "\t"
+
+        original_matrix = \
+            [
+                [-3, 9, 18, 36],
+                [5, -13, -24, -45],
+                [-1, 1, -2, -7],
+                [-1, 3, 6, 12]
+            ]
+        """
+        i got the correct matrix from here:
+        https://www.symbolab.com/solver/matrix-row-echelon-calculator/row%20echelon%20%5Cbegin%7Bpmatrix%7D-3%269%2618%2636%5C%5C%205%26-13%26-24%26-45%5C%5C%20-1%261%26-2%26-7%5C%5C%20-1%263%266%2612%5Cend%7Bpmatrix%7D?or=input
+        that's why it's all weird. 
+        """
+        correct_matrix = \
+            [
+                [-3*5, 9*5, 18*5, 36*5],
+                [0, 2*-90, 6*-90, 15*-90],
+                [0, 0, -2*-90, -4*-90],
+                [0, 0, 0, 0]
+            ]
         matrix_output = get_REF(matrix_in_question=original_matrix, tab_amount=tab_amount)
         self.assertEqual(matrix_output, correct_matrix)
