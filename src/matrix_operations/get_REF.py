@@ -45,11 +45,13 @@ def get_REF(matrix_in_question,tab_amount="\t"):
 
     if len(matrix_in_question) == 0:
         print(tab_amount,"empty list. wtf dude.")
-        exit(2)
+        #exit(2)
+        return matrix_in_question
 
     if get_if_matrix_is_all_zeros(matrix_in_question=matrix_in_question,tab_amount=tab_amount):
         print(tab_amount,"this list is all zeros. wtf dude.")
-        exit(2)
+        #exit(2)
+        return matrix_in_question
 
     num_of_rows = len(matrix_in_question)
     num_of_columns = len(matrix_in_question[0])
@@ -72,8 +74,22 @@ def get_REF(matrix_in_question,tab_amount="\t"):
 
     while row_index_a < num_of_rows:
         print(tab_amount,"row_index_a = ",row_index_a)
+        print(tab_amount,"row_index_a < num_of_rows = ","row_index_a < num_of_rows")
+        print(tab_amount,"row_index_a < num_of_rows = ",row_index_a," < ",num_of_rows)
+        print(tab_amount,"row_index_a < num_of_rows = ",row_index_a < num_of_rows)
+        print()
+        print(tab_amount, "row_index_b = ", row_index_b)
+        print(tab_amount, "row_index_b < num_of_rows = ", "row_index_b < num_of_rows")
+        print(tab_amount, "row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
+        print(tab_amount, "row_index_b < num_of_rows = ", row_index_b < num_of_rows)
+
         while row_index_b < num_of_columns:
-            print(tab_amount+"\t","row_index_b = ",row_index_b)
+
+            print(tab_amount + "\t", "row_index_b = ", row_index_b)
+            print(tab_amount + "\t", "row_index_b < num_of_rows = ", "row_index_b < num_of_rows")
+            print(tab_amount + "\t", "row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
+            print(tab_amount + "\t", "row_index_b < num_of_rows = ", row_index_b < num_of_rows)
+
 
             # if we're comparing the same rule. do nothing
             if matrix_in_question[row_index_a] == matrix_in_question[row_index_b]:
@@ -112,11 +128,15 @@ def get_REF(matrix_in_question,tab_amount="\t"):
                 print(tab_amount+"\t\t","old_matrix_in_question")
                 print_matrix(matrix=old_matrix_in_question,tab_amount=tab_amount+"\t\t\t")
 
-                if row_index_b == 2:
-                    exit(999)
-
                 row_index_b += 1
+                print(tab_amount+"\t\t","reiterating row_index_b loop")
+                print(tab_amount+"\t\t","row_index_b < num_of_rows = ", row_index_b, " < ", num_of_rows)
+        print(tab_amount,"back to row_index_a loop")
 
+        row_index_a += 1
+        column_index_shared += 1
+        row_index_b = row_index_a
+    return matrix_in_question
 
 if __name__ == "__main__":
     print("start of program")
