@@ -1,9 +1,19 @@
 import copy
+import numbers
 
 from src.display.print_matrix import *
 from src.matrix_operations.operation_functions import *
 from src.matrix_operations.find_determinant import *
 from src.matrix_operations.vector_multiplier import *
+
+def get_if_matrix_is_all_zeros(matrix_in_question, tab_amount="\t"):
+    print(tab_amount,"check_if_matrix_is_all_zeros")
+    tab_amount += "\t"
+    for row in matrix_in_question:
+        for column in row:
+            if isinstance(matrix_in_question[row][column], numbers.Number):
+                return True
+    return False
 
 def get_REF(matrix_in_question,tab_amount="\t"):
     """
@@ -32,6 +42,14 @@ def get_REF(matrix_in_question,tab_amount="\t"):
     print(tab_amount,"get_REF")
     tab_amount += "\t"
 
+    if len(matrix_in_question) == 0:
+        print("empty list. wtf dude.")
+        exit(2)
+
+    if get_if_matrix_is_all_zeros(matrix_in_question=matrix_in_question,tab_amount=tab_amount):
+        print("this list is all zeros. wtf dude.")
+        exit(2)
+
     num_of_rows = len(matrix_in_question)
     num_of_columns = len(matrix_in_question[0])
     """
@@ -39,26 +57,17 @@ def get_REF(matrix_in_question,tab_amount="\t"):
     4 5 6    -4 -5 -6  0 3 6    0   3   6    0  3  6    0  72  144  0  72 144
     7 8 9    7 8 9     7 8 9    -28 -32 -36  0  24 48   0 -72 -144  0  0  0
     """
-    print(num_of_rows)
-    row_index = 0
-    column_index = 0
+    print(tab_amount,"num_of_rows = ",num_of_rows)
+    print(tab_amount,"num_of_columns = ",num_of_columns)
 
-    all_zero_row_bool = False
+    row_index_a = 0
+    row_index_b = 0
 
-    while row_index <= num_of_rows:
-        while column_index <= num_of_rows:
-            old_matrix_in_question = copy.deepcopy(matrix_in_question)
+    while row_index_a < num_of_rows:
+        while row_index_b < num_of_columns:
 
-            scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index,number=old_matrix_in_question[row_index+1][row_index],tab_amount=tab_amount)
-            scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index+1,number=old_matrix_in_question[row_index][row_index],tab_amount=tab_amount)
 
-            if matrix_in_question[row_index][row_index] > 0 and matrix_in_question[row_index + 1][row_index] > 0:
-                scale_row_from_number(matrix=matrix_in_question,row_in_question=row_index+1,number=-1,tab_amount=tab_amount)
-
-            scale_row_from_row_and_number(matrix=matrix_in_question,row_modified=row_index+1,row_to_be_added=row_index,number=1,tab_amount=tab_amount)
-
-            print_matrix(matrix=matrix_in_question,tab_amount=tab_amount)
-            exit(999)
+    exit(999)
 
 if __name__ == "__main__":
     print("start of program")
