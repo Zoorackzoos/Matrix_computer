@@ -40,7 +40,20 @@ def get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(li
         product_of_diagonal_values_list *= diagonal_values_list[diagonal_values_list_index]
         diagonal_values_list_index += 1
 
-    return product_of_diagonal_values_list
+    product_of_scaler_operations_list = 1
+
+    #get the product of the numeric scale list. if it exists.
+    if len(list_with_REF_matrix_and_scaler_operations_in_it[2]) > 0:
+
+        product_of_scaler_operations_list = list_with_REF_matrix_and_scaler_operations_in_it[2][0]
+        scaler_value_list_index = 1
+
+        while scaler_value_list_index < len(list_with_REF_matrix_and_scaler_operations_in_it[2]):
+            product_of_scaler_operations_list *= list_with_REF_matrix_and_scaler_operations_in_it[2][scaler_value_list_index]
+            scaler_value_list_index += 1
+
+
+    return product_of_diagonal_values_list * product_of_scaler_operations_list
 
 if __name__ == "__main__":
     print("start of program")

@@ -41,10 +41,51 @@ def q_5_2_4_b(tab_amount="\t"):
     determinant_of_matrix_b = get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(list_with_REF_matrix_and_scaler_operations_in_it=matrix_b_REF_and_scaler_ops_list,tab_amount=tab_amount)
     print(tab_amount,"determinant_of_matrix_b = ",determinant_of_matrix_b)
 
+def q_5_2_4_c(tab_amount="\t"):
+    print(tab_amount,"q_5_2_4_c")
+    tab_amount += "\t"
+
+    matrix_c = \
+        [
+            [4, 3, -6],
+            [-1, 1, 5],
+            [-1, 1, 5]
+        ]
+    #uhh ok...
+    matrix_c_REF_and_scaler_ops_list = get_list_with_REF_and_return_determinant_values(matrix_in_question=matrix_c,tab_amount=tab_amount)
+    print_list_with_REF_matrix_and_scaler_operations(list_with_REF_matrix_and_scaler_operations=matrix_c_REF_and_scaler_ops_list,tab_amount=tab_amount)
+
+    determinant_of_matrix_c = get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(
+        list_with_REF_matrix_and_scaler_operations_in_it=matrix_c_REF_and_scaler_ops_list, tab_amount=tab_amount)
+    print(tab_amount, "determinant_of_matrix_c = ", determinant_of_matrix_c)
+
+def q_5_2_4_d(tab_amount="\t"):
+    print(tab_amount,"q_5_2_4_d")
+    tab_amount += "\t"
+
+    matrix_d = \
+    [
+        [-4, -16, -4],
+        [-2, -9, -3],
+        [4, 17, 2]
+    ]
+
+    matrix_d_REF_and_scaler_ops_list = get_list_with_REF_and_return_determinant_values(matrix_in_question=matrix_d,
+                                                                                       tab_amount=tab_amount)
+    print_list_with_REF_matrix_and_scaler_operations(
+        list_with_REF_matrix_and_scaler_operations=matrix_d_REF_and_scaler_ops_list, tab_amount=tab_amount)
+
+    determinant_of_matrix_d = get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(
+        list_with_REF_matrix_and_scaler_operations_in_it=matrix_d_REF_and_scaler_ops_list, tab_amount=tab_amount)
+    print(tab_amount, "determinant_of_matrix_d = ", determinant_of_matrix_d)
+
 if __name__ == "__main__":
     print("program started")
     tab_amount = "\t"
 
-    q_5_2_4_b(tab_amount=tab_amount)
+    #q_5_2_4_a(tab_amount=tab_amount)
+    #q_5_2_4_b(tab_amount=tab_amount)
+    #q_5_2_4_c(tab_amount=tab_amount)
+    q_5_2_4_d(tab_amount=tab_amount)
 
     print("program ended")
