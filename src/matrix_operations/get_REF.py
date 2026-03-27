@@ -2,6 +2,7 @@ import copy
 import numbers
 
 from src.display.print_matrix import *
+from src.matrix_operations.REF_both_pos_or_neg_helper import REF_both_pos_or_neg_helper
 from src.matrix_operations.check_if_matrix_is_all_zeros import get_if_matrix_is_all_zeros
 from src.matrix_operations.operation_functions import *
 from src.matrix_operations.find_determinant import *
@@ -233,25 +234,7 @@ def get_list_with_REF_and_return_determinant_values(matrix_in_question, tab_amou
                     determinant_operation_numeric_values_list.append(1/old_matrix_in_question[row_index_b][column_index_shared])
                     determinant_operation_numeric_values_list.append(1/old_matrix_in_question[row_index_a][column_index_shared])
 
-                    # dealing with both positive and both negative rows.
-                    print(tab_amount + "\t\t",
-                          f"is row {row_index_a} and row {row_index_b} both positive or both negative?")
-                    both_rows_positive = (matrix_in_question[row_index_a][column_index_shared] > 0
-                                          and
-                                          matrix_in_question[row_index_b][column_index_shared] > 0)
-                    both_rows_negative = (matrix_in_question[row_index_a][column_index_shared] < 0
-                                          and
-                                          matrix_in_question[row_index_b][column_index_shared] < 0)
-
-                    if both_rows_positive or both_rows_negative:
-                        print(tab_amount + "\t\t\t",
-                              f"They were either both positive or negative. So i set row {row_index_b} * -1")
-                        scale_row_from_number(matrix=matrix_in_question, row_in_question=row_index_b, number=-1,
-                                              tab_amount=tab_amount + "\t\t\t")
-                        determinant_operation_string_values_list.append("-1")
-                        determinant_operation_numeric_values_list.append(-1)
-                    else:
-                        print(tab_amount + "\t\t\t", "they were opposite signs so no operation needed.")
+                    REF_both_pos_or_neg_helper(matrix_in_question=matrix_in_question, row_index_a=row_index_a, row_index_b=row_index_b, column_index_shared=column_index_shared, tab_amount=tab_amount)
 
                     # finding the sum of the 2 rows
                     print(tab_amount + "\t\t", "finding the sum of the 2 rows.")

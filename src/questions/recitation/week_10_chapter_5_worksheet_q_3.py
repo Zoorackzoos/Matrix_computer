@@ -18,7 +18,10 @@ def week_10_chapter_5_worksheet_q_3(tab_amount="\t"):
     ]
     matrix_in_question = get_REF(matrix_in_question=matrix_in_question,tab_amount=tab_amount)
     print_matrix(matrix_in_question)
-    #TODO: add conditional in get_REF and sister function to have a conditional for 1s in either row
+    # idk. fact check this maybe. I confused the 8 with a 0.
+    # here's look.
+    # matrix_in_question = set_matrix_pivots_into_ones(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
+    # print_matrix(matrix_in_question)
 
 if __name__ == "__main__":
     tab_amount = "\t"

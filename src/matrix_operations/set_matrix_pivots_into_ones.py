@@ -13,3 +13,14 @@ def set_matrix_pivots_into_ones(matrix_in_question, tab_amount="\t"):
         else:
             matrix_in_question = scale_row_from_number(matrix=matrix_in_question,row_in_question=diagonal_index,number=1/matrix_in_question[diagonal_index][diagonal_index],tab_amount=tab_amount)
     return matrix_in_question
+
+if __name__ == "__main__":
+    matrix_in_question = \
+    [
+        [11234567,2456567,3789053],
+        [44567854,5124580,6965467],
+        [7456784,80987653,934566]
+    ]
+    set_matrix_pivots_into_ones(matrix_in_question=matrix_in_question)
+    get_REF(matrix_in_question=matrix_in_question)
+    print_matrix(matrix_in_question)
