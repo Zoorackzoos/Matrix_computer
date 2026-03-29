@@ -3,8 +3,6 @@ this computes matrix row operations. it is useful if you are in linear algebra. 
 
 <img src="https://media1.tenor.com/m/cSn7oTRzzDgAAAAd/robot-chinese-robot.gif" alt="chinese robot crash out 1" width="500" height="500">  
 
-<img src="https://c.tenor.com/GaLBfxEOujoAAAAd/tenor.gif" width="500" height="500" alt="chinese robot crash out 2">
-
 [1000 times goodbyeeeeee](https://www.youtube.com/watch?v=Y5OJ8kSzaOw&list=PLWVo2tank-zx_33G4gXbelq5oWKyG-ZsZ&index=16)
 
 ## repo link
