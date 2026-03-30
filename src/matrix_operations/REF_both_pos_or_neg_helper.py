@@ -23,12 +23,12 @@ def REF_both_pos_or_neg_helper(matrix_in_question, row_index_a, row_index_b, col
     else:
         print(tab_amount + "\t\t\t", "they were opposite signs so no operation needed.")
 
-    :param column_index_shared:
-    :param row_index_a:
-    :param row_index_b:
-    :param matrix_in_question:
-    :param tab_amount:
-    :return:
+    :param column_index_shared: the index at which the row's columns are being compared
+    :param row_index_a: row a in the matrix_in_question :-)
+    :param row_index_b: row b in the matrix_in_question :-)
+    :param matrix_in_question: matrix of reasonable size
+    :param tab_amount: variations of "\t"
+    :return: if row a and row b in matrix in question are both + or -. then it scales row b by -1. if not then it does nothing.
     """
     print(tab_amount,"REF_both_pos_or_neg_helper")
     tab_amount += "\t"

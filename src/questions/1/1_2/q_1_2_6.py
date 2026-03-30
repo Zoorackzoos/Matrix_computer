@@ -10,6 +10,6 @@ def q_1_2_6(tab_amount="\t"):
         [2, -4, -1, "|", -3],
         [10, -12, "h", "|", "k"]
     ]
-    print_matrix(matrix=matrix_in_question)
+    print_matrix(matrix_in_question=matrix_in_question)
     scale_row_from_number(matrix=matrix_in_question,row_in_question=1,number=5,tab_amount=tab_amount+"\t")
-    print_matrix_frac(matrix=matrix_in_question)
+    print_matrix_frac(matrix_in_question=matrix_in_question)

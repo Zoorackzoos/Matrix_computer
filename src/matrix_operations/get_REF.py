@@ -10,6 +10,13 @@ from src.matrix_operations.set_matrix_pivots_into_ones import set_matrix_pivots_
 from src.matrix_operations.vector_multiplier import *
 
 def get_REF(matrix_in_question,tab_amount="\t"):
+    """
+    TODO: change this and it's brother function so that pivot rows that contain 0 are swapped or som shit.
+
+    :param matrix_in_question: just a matrix bruh
+    :param tab_amount: variations of "\t"
+    :return: a REF matrix. NOT A RREF MATRIX DAMMIT
+    """
     print(tab_amount,"get_REF")
     tab_amount += "\t"
 
@@ -108,9 +115,9 @@ def get_REF(matrix_in_question,tab_amount="\t"):
 
                     #compare and contrast matrices.
                     print(tab_amount+"\t\t","matrix_in_question")
-                    print_matrix(matrix=matrix_in_question,tab_amount=tab_amount+"\t\t\t")
+                    print_matrix(matrix_in_question=matrix_in_question, tab_amount=tab_amount + "\t\t\t")
                     print(tab_amount+"\t\t","old_matrix_in_question")
-                    print_matrix(matrix=old_matrix_in_question,tab_amount=tab_amount+"\t\t\t")
+                    print_matrix(matrix_in_question=old_matrix_in_question, tab_amount=tab_amount + "\t\t\t")
 
                     row_index_b += 1
                     print(tab_amount+"\t\t","reiterating row_index_b loop")
@@ -130,6 +137,8 @@ def get_REF(matrix_in_question,tab_amount="\t"):
 
 def get_list_with_REF_and_return_determinant_values(matrix_in_question, tab_amount="\t"):
     """
+    TODO: change this and it's brother function so that pivot rows that contain 0 are swapped or som shit.
+
     gets the reduced echelon form but in a different return value way
 
     1. return value is a list that contains
@@ -244,9 +253,9 @@ def get_list_with_REF_and_return_determinant_values(matrix_in_question, tab_amou
 
                     # compare and contrast matrices.
                     print(tab_amount + "\t\t", "matrix_in_question")
-                    print_matrix(matrix=matrix_in_question, tab_amount=tab_amount + "\t\t\t")
+                    print_matrix(matrix_in_question=matrix_in_question, tab_amount=tab_amount + "\t\t\t")
                     print(tab_amount + "\t\t", "old_matrix_in_question")
-                    print_matrix(matrix=old_matrix_in_question, tab_amount=tab_amount + "\t\t\t")
+                    print_matrix(matrix_in_question=old_matrix_in_question, tab_amount=tab_amount + "\t\t\t")
 
                     row_index_b += 1
                     print(tab_amount + "\t\t", "reiterating row_index_b loop")
@@ -277,7 +286,7 @@ def in_file_test_get_REF():
     matrix_in_question = get_REF(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
     matrix_in_question = set_matrix_pivots_into_ones(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
 
-    print_matrix(matrix=matrix_in_question, tab_amount=tab_amount)
+    print_matrix(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
     print("end of program")
 
 def in_file_test_get_REF_and_return_determinant_values():
@@ -291,9 +300,22 @@ def in_file_test_get_REF_and_return_determinant_values():
         ]
     tab_amount = "\t"
     output_matrix_and_operation_values_List = get_list_with_REF_and_return_determinant_values(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
-    print_matrix(matrix=output_matrix_and_operation_values_List[0],tab_amount=tab_amount)
+    print_matrix(matrix_in_question=output_matrix_and_operation_values_List[0], tab_amount=tab_amount)
     print(output_matrix_and_operation_values_List[1])
 
+    print("end of program")
+
+def in_file_test_get_REF_when_some_values_are_zero():
+    print("start of program")
+    tab_amount = "\t"
+    matrix_in_question = \
+        [
+            [0, 2, 1, "|", 5],
+            [3, -1, 0, "|", 4],
+            [2, 0, -3, "|", 1]
+        ]
+    matrix_in_question = get_REF(matrix_in_question=matrix_in_question,tab_amount=tab_amount)
+    print_matrix(matrix_in_question=matrix_in_question, tab_amount=tab_amount)
     print("end of program")
 
 if __name__ == "__main__":

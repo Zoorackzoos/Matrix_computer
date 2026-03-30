@@ -5,6 +5,13 @@ from src.matrix_operations.find_determinant import *
 from src.matrix_operations.vector_multiplier import *
 
 def set_matrix_pivots_into_ones(matrix_in_question, tab_amount="\t"):
+    """
+    sets all of the pivots into ones. this creates verbose and sometimes gross floats in the non pivot rows
+
+    :param matrix_in_question:
+    :param tab_amount:
+    :return:
+    """
     print(tab_amount,"turn_matrix_pivots_into_ones")
     tab_amount += "\t"
     for diagonal_index in range(len(matrix_in_question)):

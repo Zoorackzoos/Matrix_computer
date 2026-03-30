@@ -1,7 +1,7 @@
-def swap_rows(matrix, row_1, row_2, tab_amount="\t"):
+def swap_rows(matrix_in_question, row_1, row_2, tab_amount="\t"):
     """
-    :param tab_amount:
-    :param matrix:
+    :param tab_amount: variations of "\t"
+    :param matrix_in_question: matrix of a reasonable size
     :param row_1: this needs to be a integer of the row. not r1,r2,r3 but 1,2,3
     :param row_2: this needs to be a integer of the row. not r1,r2,r3 but 1,2,3
     :return: the new matrix. even though the matrix_in_question variable will be edited
@@ -9,15 +9,15 @@ def swap_rows(matrix, row_1, row_2, tab_amount="\t"):
     print(tab_amount,"swap_rows")
     tab_amount += "\t"
 
-    row_1_content = matrix[row_1]
+    row_1_content = matrix_in_question[row_1]
     print(tab_amount,"row_1_content = ",row_1_content)
-    row_2_content = matrix[row_2]
+    row_2_content = matrix_in_question[row_2]
     print(tab_amount,"row_2_content = ",row_2_content)
 
-    matrix[row_2] = row_1_content
-    matrix[row_1] = row_2_content
+    matrix_in_question[row_2] = row_1_content
+    matrix_in_question[row_1] = row_2_content
 
-    return matrix
+    return matrix_in_question
 
 def scale_row_from_number(matrix, row_in_question, number, tab_amount="\t"):
     """

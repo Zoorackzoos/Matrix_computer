@@ -51,10 +51,10 @@ class UnitTest_Operation_Functions(unittest.TestCase):
             [1, -3, 2, '|', -4],
             [-4, 8, -3, '|', -6]
         ]
-        print_matrix(matrix=original_matrix, tab_amount=tab_amount)
-        print_matrix(matrix=correct_matrix, tab_amount=tab_amount)
+        print_matrix(matrix_in_question=original_matrix, tab_amount=tab_amount)
+        print_matrix(matrix_in_question=correct_matrix, tab_amount=tab_amount)
         print()
-        self.assertTrue( swap_rows(matrix=original_matrix,row_1=0,row_2=1,tab_amount=tab_amount) == correct_matrix)
+        self.assertTrue(swap_rows(matrix_in_question=original_matrix, row_1=0, row_2=1, tab_amount=tab_amount) == correct_matrix)
 
     def test_scale_row_from_number(self, tab_amount=""):
         print(tab_amount,inspect.currentframe().f_code.co_name)
@@ -71,8 +71,8 @@ class UnitTest_Operation_Functions(unittest.TestCase):
                 [4, -11, -3, '|', 1],
                 [-4, 8, -3, '|', -6]
             ]
-        print_matrix(matrix=original_matrix, tab_amount=tab_amount)
-        print_matrix(matrix=correct_matrix, tab_amount=tab_amount)
+        print_matrix(matrix_in_question=original_matrix, tab_amount=tab_amount)
+        print_matrix(matrix_in_question=correct_matrix, tab_amount=tab_amount)
         print()
         self.assertTrue(
             scale_row_from_number(matrix=original_matrix,row_in_question=0,number=2,tab_amount=tab_amount)
@@ -94,8 +94,8 @@ class UnitTest_Operation_Functions(unittest.TestCase):
                 [0, 1, -11, '|', 17],
                 [-4, 8, -3, '|', -6]
             ]
-        print_matrix(matrix=original_matrix, tab_amount=tab_amount)
-        print_matrix(matrix=correct_matrix, tab_amount=tab_amount)
+        print_matrix(matrix_in_question=original_matrix, tab_amount=tab_amount)
+        print_matrix(matrix_in_question=correct_matrix, tab_amount=tab_amount)
         print()
         self.assertTrue(
             scale_row_from_row_and_number(matrix=original_matrix,row_modified=1,row_to_be_added=0,number=-4, tab_amount=tab_amount)

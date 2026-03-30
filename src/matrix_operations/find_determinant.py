@@ -2,16 +2,16 @@ from src.matrix_operations.get_REF import *
 from src.matrix_operations.get_diagonal_values_from_matrix import get_diagonal_values_from_matrix
 
 
-def get_determinant_two_by_two_matrix(matrix, tab_amount="\t"):
+def get_determinant_two_by_two_matrix(matrix_in_question, tab_amount="\t"):
     """
 
-    :param matrix: a 2 x 2 matrix
+    :param matrix_in_question: a 2 x 2 matrix
     :return: the determinant as dictated by a*d - b*c
     """
-    a = matrix[0][0]
-    b = matrix[0][1]
-    c = matrix[1][0]
-    d = matrix[1][1]
+    a = matrix_in_question[0][0]
+    b = matrix_in_question[0][1]
+    c = matrix_in_question[1][0]
+    d = matrix_in_question[1][1]
     return_value = a*d - b*c
     print(tab_amount,return_value)
     return return_value
