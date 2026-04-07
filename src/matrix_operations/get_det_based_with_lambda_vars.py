@@ -1,6 +1,7 @@
 from src.display.print_matrix import *
 from src.display.float_to_fraction_string import *
 from src.display.print_lambda_algebra_matrix import *
+import sympy as sp
 
 def get_det_based_with_lambda_vars_in_3x3_matrix(matrix_with_lambdas, tab_amount ="\t"):
     """
@@ -103,12 +104,40 @@ def lambda_algebra_operation(lambda_list_a, lambda_list_b, operation_string, tit
     -48 x       48λ
     -λ  -19λ    λ^2
     """
-    if (lambda_list_a[1][1] != ""
-        and lambda_list_b[1][1] != ""
-        and lambda_list_a[1][1] == lambda_list_b[1][1]):
-        #TODO: finish this function. i'm too geeked to proceed.
+    if (lambda_list_a[1][1] != "" and lambda_list_b[1][1] != "" and lambda_list_a[1][1] == lambda_list_b[1][1]):
+        pass
+    #TODO: finish this function. i'm too geeked to proceed.
 
     exit(999)
+
+def analyze_linear_matrix():
+    # Define the symbol lambda
+    lam = sp.symbols('lambda')
+
+    # Define the matrix based on:
+    # [37-λ,   28,  -10617]
+    # [   0, 19-λ,   -5516]
+    # [   0,   14,   -48-λ]
+    # Note: Assuming '14' and '-48-λ' are row 3 based on structure
+
+    M = sp.Matrix([
+        [37 - lam, 28, -10617],
+        [0, 19 - lam, -5516],
+        [0, 14, -48 - lam]
+    ])
+
+    print("Matrix (A - λI):")
+    sp.pprint(M)
+
+    # 1. Compute Determinant (Characteristic Polynomial)
+    det = M.det()
+    print(f"\nCharacteristic Polynomial: {sp.simplify(det)}")
+
+    # 2. Find Eigenvalues
+    eigenvals = sp.solve(det, lam)
+    print(f"\nEigenvalues (λ): {eigenvals}")
+
+    return M, eigenvals
 
 if __name__ == "__main__":
     tab_amount = "\t"
@@ -117,6 +146,7 @@ if __name__ == "__main__":
     they're very unstandardized.
     so it's going to be very singular use.
     """
+
     matrix_with_lambdas = \
         [
             [ [37,[-1,"λ",1]] , [28,[0,"",0]] , [-160,[0,"",0]] ],
@@ -124,3 +154,6 @@ if __name__ == "__main__":
             [ [16,[0,"",0]] , [14,[0,"",0]] , [-48,[-1,"λ",1]] ]
         ]
     get_det_based_with_lambda_vars_in_3x3_matrix(matrix_with_lambdas=matrix_with_lambdas,tab_amount=tab_amount)
+
+    # Execute the function
+    #mat, evals = analyze_linear_matrix()
