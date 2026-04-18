@@ -1,4 +1,4 @@
-from src.matrix_operations.operation_functions import scale_row_from_number
+from src.A_universal_operations.matrix_operations.matrix_operation_functions import scale_row_from_number
 
 
 def REF_both_pos_or_neg_helper(matrix_in_question, row_index_a, row_index_b, column_index_shared, tab_amount="\t"):

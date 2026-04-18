@@ -1,8 +1,4 @@
-from src.display.print_matrix import *
-from src.matrix_operations.check_if_matrix_is_all_zeros import get_if_matrix_is_all_zeros
-from src.matrix_operations.operation_functions import *
-from src.matrix_operations.find_determinant import *
-from src.matrix_operations.vector_multiplier import *
+from src.A_universal_operations.matrix_operations.matrix_operation_functions import *
 
 def set_matrix_pivots_into_ones(matrix_in_question, tab_amount="\t"):
     """
@@ -21,6 +17,7 @@ def set_matrix_pivots_into_ones(matrix_in_question, tab_amount="\t"):
             matrix_in_question = scale_row_from_number(matrix=matrix_in_question,row_in_question=diagonal_index,number=1/matrix_in_question[diagonal_index][diagonal_index],tab_amount=tab_amount)
     return matrix_in_question
 
+"""
 if __name__ == "__main__":
     matrix_in_question = \
     [
@@ -31,3 +28,4 @@ if __name__ == "__main__":
     set_matrix_pivots_into_ones(matrix_in_question=matrix_in_question)
     get_REF(matrix_in_question=matrix_in_question)
     print_matrix(matrix_in_question)
+"""

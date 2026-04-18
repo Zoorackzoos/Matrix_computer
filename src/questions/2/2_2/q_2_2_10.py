@@ -8,7 +8,7 @@ V = [_ _ _ _]
 
 """
 
-from src.display.print_matrix import print_matrix
+from src.A_universal_operations.display.print_matrix import print_matrix
 from src.matrix_operations.operation_functions import *
 
 def q_2_2_10(tab_amount="\t"):

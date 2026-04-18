@@ -1,10 +1,19 @@
+"""
+these functions do matrix operations.
+* swap rows
+* scale a row by a number (scaler)
+* scale a row by a number multiplied by another row
+"""
+
 def swap_rows(matrix_in_question, row_1, row_2, tab_amount="\t"):
     """
+    swaps rows in a matrix.
+
     :param tab_amount: variations of "\t"
-    :param matrix_in_question: matrix of a reasonable size
-    :param row_1: this needs to be a integer of the row. not r1,r2,r3 but 1,2,3
-    :param row_2: this needs to be a integer of the row. not r1,r2,r3 but 1,2,3
-    :return: the new matrix. even though the matrix_in_question variable will be edited
+    :param matrix_in_question: matrix of a any size
+    :param row_1: this needs to be a integer of the row. not r1,r2,r3 but 0,1,2
+    :param row_2: this needs to be a integer of the row. not r1,r2,r3 but 0,1,2
+    :return: the new matrix. matrix_in_question will be edited anyway somehow, but if someone is anal they can have this too.
     """
     print(tab_amount,"swap_rows")
     tab_amount += "\t"
@@ -21,11 +30,11 @@ def swap_rows(matrix_in_question, row_1, row_2, tab_amount="\t"):
 
 def scale_row_from_number(matrix, row_in_question, number, tab_amount="\t"):
     """
-    :param matrix:
+    :param matrix: matrix of reasonable size
     :param row_in_question: this ia integer representing the row
     :param number: this is a integer, or a decimal that serpent a fraction
-    :param tab_amount:
-    :return:
+    :param tab_amount: variations of "\t
+    :return: the result of the edited matrix. matrix_in_question will be edited anyway but if you're anal this is for you.
     """
     print(tab_amount,"scale_row_from_number")
     tab_amount += "\t"
@@ -43,13 +52,12 @@ def scale_row_from_number(matrix, row_in_question, number, tab_amount="\t"):
 
 def scale_row_from_row_and_number(matrix, row_modified, row_to_be_added, number, tab_amount="\t"):
     """
-
-    :param matrix:
+    :param matrix: matrix of reasonable size
     :param row_modified: this is the row that will be modified
     :param row_to_be_added: this is the row that will contribute the modified row
     :param number: this is the row that will also contribute to the modified row.
-    :param tab_amount:
-    :return:
+    :param tab_amount: variations of "\t"
+    :return: the edited matrix. matrix_in_question will be edited anyway.
     """
     print(tab_amount,"scale_row_from_row_and_number")
     tab_amount += "\t"

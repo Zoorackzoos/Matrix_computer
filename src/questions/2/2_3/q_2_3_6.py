@@ -1,4 +1,4 @@
-from src.display.print_matrix import print_matrix, print_matrix_frac
+from src.A_universal_operations.display.print_matrix import print_matrix, print_matrix_frac
 from src.matrix_operations.operation_functions import *
 
 def q_2_3_6_a(tab_amount="\t"):

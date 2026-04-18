@@ -2,7 +2,7 @@ import inspect
 import unittest
 
 from src.matrix_operations.operation_functions import *
-from src.display.print_matrix import print_matrix
+from src.A_universal_operations.display.print_matrix import print_matrix
 
 """
 def manual_test_swapping_rows(matrix, tab_amount="\t"):

@@ -1,4 +1,4 @@
-from src.display.print_matrix import print_matrix
+from src.A_universal_operations.display.print_matrix import print_matrix
 from src.matrix_operations.operation_functions import *
 
 def q_2_5_2(tab_amount="\t"):

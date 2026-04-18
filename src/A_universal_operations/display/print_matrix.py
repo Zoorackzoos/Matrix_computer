@@ -1,4 +1,4 @@
-from src.display.float_to_fraction_string import float_to_fraction_string
+from src.A_universal_operations.display.float_to_fraction_string import float_to_fraction_string
 
 def print_matrix(matrix_in_question, tab_amount="\t"):
     print(tab_amount,"print_matrix")

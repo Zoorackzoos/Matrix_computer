@@ -1,5 +1,5 @@
 from src.matrix_operations.operation_functions import swap_rows, scale_row_from_row_and_number, scale_row_from_number
-from src.display.print_matrix import print_matrix_frac, print_matrix
+from src.A_universal_operations.display.print_matrix import print_matrix_frac, print_matrix
 
 
 def q_1_2_3(tab_amount="\t"):

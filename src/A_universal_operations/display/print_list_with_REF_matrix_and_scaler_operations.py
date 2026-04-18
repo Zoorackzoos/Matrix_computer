@@ -1,4 +1,4 @@
-from src.display.print_matrix import *
+from src.A_universal_operations.display.print_matrix import *
 
 def print_list_with_REF_matrix_and_scaler_operations(list_with_REF_matrix_and_scaler_operations, tab_amount="\t"):
     print(tab_amount,"print_list_with_REF_matrix_and_scaler_operations")

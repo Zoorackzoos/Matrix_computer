@@ -1,12 +1,14 @@
 import numpy as np
 
-from src.display.print_matrix import print_matrix
 
 def multiply_matrix_static_two_by_two_both_matrices(matrix_a, matrix_b, tab_amount="\t"):
     """
+    i made this very long ago. it has not been tested well.
+    i'm not entirely sure it's finished.
+
     :param tab_amount: this is just an amount of "\t"
-    :param matrix_a:
-    :param matrix_b:
+    :param matrix_a: matrix of reasonable size
+    :param matrix_b: matrix of reasonable size
     :return: a 2x2 matrix of the product of the matrices.
     """
     print(tab_amount,"multiply_matrix_static_two_by_two_both_matrices")
@@ -24,12 +26,13 @@ def multiply_matrix_static_two_by_two_both_matrices(matrix_a, matrix_b, tab_amou
 
 def multiply_matrix_universal(matrix_a, matrix_b, tab_amount="\t"):
     """
-    Credits to eat.shoe AKA Thomas, for finishing this function
+    Credits to eat.shoe AKA Thomas, for finishing this function.
+    it multiplies a 2 matrices of any size.
 
     :param tab_amount: this is just an amount of "\t"
-    :param matrix_a:
-    :param matrix_b:
-    :return:
+    :param matrix_a: matrix of reasonable size
+    :param matrix_b: matrix of reasonable size
+    :return: the product of matrix_a and matrix_b
     """
     print(tab_amount, "multiply_matrix")
     tab_amount += "\t"
@@ -59,10 +62,6 @@ def multiply_matrix_universal(matrix_a, matrix_b, tab_amount="\t"):
                 return_matrix_un_normalized[i][j] += matrix_a[i][k] * matrix_b[k][j]
 
     return return_matrix_un_normalized
-
-    # exit("not finished")
-    # else:
-    #     exit("un-acceptable matrix multiplication n and m. exiting")
 
 """
 if __name__ == "__main__":

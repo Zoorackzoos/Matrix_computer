@@ -1,6 +1,5 @@
-from src.matrix_operations.get_REF import *
-from src.matrix_operations.get_diagonal_values_from_matrix import get_diagonal_values_from_matrix
-
+from src.A_universal_operations.matrix_operations.REF_and_RREF_getters.get_REF import *
+from src.A_universal_operations.matrix_operations.get_diagonal_values_from_matrix import get_diagonal_values_from_matrix
 
 def get_determinant_two_by_two_matrix(matrix_in_question, tab_amount="\t"):
     """

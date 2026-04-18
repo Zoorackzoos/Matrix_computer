@@ -1,4 +1,4 @@
-from src.display.print_matrix import print_matrix, print_matrix_frac
+from src.A_universal_operations.display.print_matrix import print_matrix, print_matrix_frac
 from src.matrix_operations.operation_functions import *
 
 def exam_1_q_7(tab_amount = ""):

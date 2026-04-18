@@ -1,6 +1,5 @@
-from src.matrix_operations.operation_functions import *
-from src.matrix_operations.find_determinant import *
-from src.matrix_operations.vector_multiplier import *
+from src.matrix_operations.determinant_getters.find_determinant import *
+
 
 def q_5_1_1(tab_amount="\t"):
     matrix_in_question = \

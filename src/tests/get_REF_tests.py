@@ -1,7 +1,7 @@
 import inspect
 import unittest
 
-from src.matrix_operations.get_REF import *
+from src.A_universal_operations.matrix_operations.REF_and_RREF_getters.get_REF import *
 
 class UnitTest_get_REF(unittest.TestCase):
 

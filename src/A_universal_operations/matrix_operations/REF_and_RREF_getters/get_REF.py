@@ -1,13 +1,11 @@
 import copy
-import numbers
 
-from src.display.print_matrix import *
-from src.matrix_operations.REF_both_pos_or_neg_helper import REF_both_pos_or_neg_helper
-from src.matrix_operations.check_if_matrix_is_all_zeros import get_if_matrix_is_all_zeros
-from src.matrix_operations.operation_functions import *
-from src.matrix_operations.find_determinant import *
-from src.matrix_operations.set_matrix_pivots_into_ones import set_matrix_pivots_into_ones
-from src.matrix_operations.vector_multiplier import *
+from src.A_universal_operations.matrix_operations.REF_and_RREF_getters.REF_both_pos_or_neg_helper import \
+    REF_both_pos_or_neg_helper
+from src.A_universal_operations.matrix_operations.set_matrix_pivots_into_ones import set_matrix_pivots_into_ones
+from src.A_universal_operations.matrix_operations.get_if_matrix_is_all_zeros import get_if_matrix_is_all_zeros
+from src.A_universal_operations.matrix_operations.matrix_operation_functions import *
+from src.A_universal_operations.display.print_matrix import print_matrix
 
 def get_REF(matrix_in_question,tab_amount="\t"):
     """

@@ -1,6 +1,5 @@
-from src.display.print_matrix import *
-from src.display.float_to_fraction_string import *
-from src.display.print_lambda_algebra_matrix import *
+from src.A_universal_operations.display.print_matrix import *
+from src.A_universal_operations.display.print_lambda_algebra_matrix import *
 import sympy as sp
 
 def get_det_based_with_lambda_vars_in_3x3_matrix(matrix_with_lambdas, tab_amount ="\t"):

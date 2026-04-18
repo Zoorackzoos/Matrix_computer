@@ -1,11 +1,5 @@
-from src.display.print_matrix import *
-from src.matrix_operations.check_if_matrix_is_all_zeros import *
-from src.matrix_operations.find_determinant import *
-from src.matrix_operations.get_REF import *
-from src.matrix_operations.operation_functions import *
-from src.matrix_operations.set_matrix_pivots_into_ones import *
-from src.matrix_operations.vector_multiplier import *
-from src.display.print_list_with_REF_matrix_and_scaler_operations import *
+from src.A_universal_operations.display.print_matrix import print_matrix
+from src.A_universal_operations.matrix_operations.REF_and_RREF_getters.get_REF import get_REF
 
 def week_10_chapter_5_worksheet_q_3(tab_amount="\t"):
     print(tab_amount,"week_10_chapter_5_worksheet_q_3")
