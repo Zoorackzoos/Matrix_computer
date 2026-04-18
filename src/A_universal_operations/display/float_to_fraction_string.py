@@ -1,6 +1,6 @@
 from fractions import Fraction
 
-def float_to_fraction_string(value: float, max_denominator: int = 100):
+def float_to_fraction_string(value: float, max_denominator: int = 1000):
     """
     duncan doc-u-string:
     i had a issue where 7/27 & 2/27 were not appearing as their fractions selves, instead decimals.

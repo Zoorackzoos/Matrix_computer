@@ -19,7 +19,7 @@ def get_dot_product(matrix_a, matrix_b, tab_amount="\t"):
     :return: a number that's the dot product of the 2 matrices
     """
     print(tab_amount,"get_dot_product")
-    tab_amount = "\t"
+    tab_amount += "\t"
 
     # if i catch you with matrices with different dimensions. i'll get ya.
     if (len(matrix_a) != len(matrix_b)) or (len(matrix_a[0]) != len(matrix_b[0])):
@@ -29,31 +29,33 @@ def get_dot_product(matrix_a, matrix_b, tab_amount="\t"):
         sys.exit("matrix_a and matrix_b are not the same length. wtf bro.")
 
     # multiply, add that to the sum, then do it again until we don't have terms anymore
-    i = 0
-    j = 0
     x_dimension_both = len(matrix_a[0])
     y_dimension_both = len(matrix_a)
 
     dot_product_total = 0
     print(tab_amount,"dot_product_total -> ",dot_product_total)
 
-    while i < x_dimension_both:
-        while j < y_dimension_both:
-            print(tab_amount+"\t","dot_product_total -> ",dot_product_total)
-            print(tab_amount+"\t\t","matrix_a[i][j] -> ",matrix_a[i][j])
-            print(tab_amount+"\t\t","matrix_b[i][j] -> ",matrix_b[i][j])
-            print(tab_amount+"\t\t","matrix_a[i][j] * matrix_b[j][i] -> ",matrix_a[i][j] * matrix_b[j][i])
-            dot_product_total += matrix_a[i][j] * matrix_b[j][i]
-            print(tab_amount + "\t", "dot_product_total -> ", dot_product_total)
-            print()
-            j += 1
-        i += 1
+    print(tab_amount,"x_dimension_both -> ",x_dimension_both)
+    print(tab_amount,"y_dimension_both -> ",y_dimension_both)
+    print(tab_amount,"start of loop")
+
+    for x in range(y_dimension_both):
+        print(tab_amount+"\t","x -> ",x)
+        for y in range(x_dimension_both):
+            print(tab_amount+"\t\t","y -> ",y)
+            print(tab_amount+"\t\t","matrix_a[i][j] -> ",matrix_a[x][y])
+            print(tab_amount+"\t\t","matrix_b[i][j] -> ",matrix_b[x][y])
+            dot_product_total += matrix_a[x][y] * matrix_b[x][y]
+            print(tab_amount+"\t\t","dot_product_total -> ", dot_product_total)
+    print()
 
     print(tab_amount,"dot_product_total -> ",dot_product_total)
 
     return dot_product_total
 
+
 if __name__ == "__main__":
+    """
     matrix_a = \
     [
         [1,2,3],
@@ -70,3 +72,20 @@ if __name__ == "__main__":
     tab_amount = "\t"
 
     get_dot_product(matrix_a, matrix_b, tab_amount)
+    """
+
+    x = \
+        [
+            [-5],
+            [-2],
+            [0]
+        ]
+    y = \
+        [
+            [-3],
+            [5],
+            [-3]
+        ]
+    tab_amount = "\t"
+    variable_lol = get_dot_product(matrix_a=x, matrix_b=y, tab_amount=tab_amount)
+    print(variable_lol)
