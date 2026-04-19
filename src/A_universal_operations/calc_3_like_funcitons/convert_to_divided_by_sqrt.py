@@ -17,7 +17,7 @@ def get_decimal_length(number):
         return 0
 
 #made of sin
-def convert_to_divided_by_sqrt(number,tab_amount="\t", tolerance=1e-6, max_check=20):
+def convert_to_divided_by_sqrt(number,tab_amount="\t", tolerance=1e-6, max_check=10000):
     """
     turns shitty irrational numbers into their fraction counterparts so you can read them.
 
@@ -40,4 +40,8 @@ def convert_to_divided_by_sqrt(number,tab_amount="\t", tolerance=1e-6, max_check
                 candidate = a / (b ** 0.5)
                 if abs(candidate - number) < tolerance:
                     return f"{a}/sqrt({b})"
-        return None
+        return number
+
+if __name__ == "__main__":
+    weird_sum = 1.6 + 3.2
+    print( convert_to_divided_by_sqrt(number=weird_sum, tab_amount="\t") )

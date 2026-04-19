@@ -21,14 +21,16 @@ def get_if_three_matrices_are_perpendicular(matrix_a, matrix_b, matrix_c, tab_am
 
     return_bool = False
 
-    ab_equals_zero_bool = ab == 0
-    print(tab_amount,"ab_equals_zero_bool = ",ab_equals_zero_bool)
+    #visually this looks like a triangle. for it to be perpendicular it has to have a 90 degree angle
+    #so the ab doesn't matter :-/
+    #ab_equals_zero_bool = ab == 0
+    #print(tab_amount,"ab_equals_zero_bool = ",ab_equals_zero_bool)
     ac_equals_zero_bool = ac == 0
     print(tab_amount,"ac_equals_zero_bool = ",ac_equals_zero_bool)
     bc_equals_zero_bool = bc == 0
     print(tab_amount,"bc_equals_zero_bool = ",bc_equals_zero_bool)
 
-    if ab_equals_zero_bool and ac_equals_zero_bool and bc_equals_zero_bool:
+    if ac_equals_zero_bool and bc_equals_zero_bool:
         return_bool = True
 
     print(tab_amount,"return_bool = ",return_bool)

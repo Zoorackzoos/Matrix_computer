@@ -4,7 +4,7 @@ from src.A_universal_operations.display.print_matrix import print_matrix, print_
 from src.A_universal_operations.matrix_operations.scale_entire_matirx_with_sclaer import scale_entire_matrix_with_scaler
 
 
-def get_projection_with_2_matrices(matrix_a, matrix_b, tab_amount="\t"):
+def get_projection_with_2_matrices(minority_matrix, majority_matrix, tab_amount="\t"):
     """
     proj_d * u
     =
@@ -12,18 +12,18 @@ def get_projection_with_2_matrices(matrix_a, matrix_b, tab_amount="\t"):
     /////
     d * d
 
-    :param matrix_a:
-    :param matrix_b:
+    :param minority_matrix:
+    :param majority_matrix:
     :param tab_amount:
     :return:
     """
     print(tab_amount,"get_projection_with_2_matrices)")
     tab_amount += "\t"
 
-    numerator = get_dot_product(matrix_a=matrix_a,matrix_b=matrix_b,tab_amount=tab_amount)
+    numerator = get_dot_product(matrix_a=minority_matrix, matrix_b=majority_matrix, tab_amount=tab_amount)
     print(tab_amount,"numerator -> ",numerator)
 
-    denominator = get_dot_product(matrix_a=matrix_b,matrix_b=matrix_b,tab_amount=tab_amount)
+    denominator = get_dot_product(matrix_a=majority_matrix, matrix_b=majority_matrix, tab_amount=tab_amount)
     print(tab_amount,"denominator -> ",denominator)
 
     print()
@@ -34,11 +34,11 @@ def get_projection_with_2_matrices(matrix_a, matrix_b, tab_amount="\t"):
     print(tab_amount, "left_product_fractionated ->", left_product_fractionated)
     print(tab_amount,"left_product -> ",left_product)
     print(tab_amount,"matrix_b -> ")
-    print_matrix(matrix_in_question=matrix_b,tab_amount=tab_amount+"\t")
+    print_matrix(matrix_in_question=majority_matrix, tab_amount=tab_amount + "\t")
 
     print()
 
-    final_product = scale_entire_matrix_with_scaler(matrix=matrix_b,scaler=left_product,tab_amount=tab_amount)
+    final_product = scale_entire_matrix_with_scaler(matrix=majority_matrix, scaler=left_product, tab_amount=tab_amount)
     print(tab_amount,"final_product -> ")
     print_matrix_frac(matrix_in_question=final_product,tab_amount=tab_amount)
 
@@ -61,4 +61,4 @@ if __name__ == "__main__":
     tab_amount = "\t"
 
     #probably fine. idk :-/
-    get_projection_with_2_matrices(matrix_a=matrix_a,matrix_b=matrix_b,tab_amount=tab_amount)
+    get_projection_with_2_matrices(minority_matrix=matrix_a, majority_matrix=matrix_b, tab_amount=tab_amount)

@@ -101,7 +101,6 @@ def q_7_1_3_e(tab_amount="\t"):
                                                   tab_amount=tab_amount)
 
 if __name__ == "__main__":
-    """
     answers_list = \
         [
             q_7_1_3_a(),
@@ -112,5 +111,3 @@ if __name__ == "__main__":
         ]
 
     print_matrix(matrix_in_question=answers_list)
-    """
-    print(q_7_1_3_a())
