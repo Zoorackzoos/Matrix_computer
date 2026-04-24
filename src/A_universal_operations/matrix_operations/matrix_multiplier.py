@@ -1,5 +1,5 @@
 import numpy as np
-
+from src.A_universal_operations.float_to_fraction import float_to_fraction_string
 
 def multiply_matrix_static_two_by_two_both_matrices(matrix_a, matrix_b, tab_amount="\t"):
     """
@@ -149,6 +149,6 @@ def add_column_a_and_column_b(column_a, column_b, tab_amount="\t"):
     added_column = []
 
     for i in range(len(column_a)):
-        added_column.append(column_a[i])
+        added_column.append(float_to_fraction_string(column_a[i] + column_b[i]))
 
     return added_column
