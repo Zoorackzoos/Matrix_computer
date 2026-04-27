@@ -6,6 +6,8 @@ this computes matrix row operations. it is useful if you are in linear algebra. 
 ```pycon
 #TODO: refactor the old math repos into this one.
 # and also have good file structure for those
+
+#TODO: organize universal operations folder
 ```
 
 [1000 times goodbyeeeeee](https://www.youtube.com/watch?v=Y5OJ8kSzaOw&list=PLWVo2tank-zx_33G4gXbelq5oWKyG-ZsZ&index=16)

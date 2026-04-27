@@ -1,5 +1,5 @@
 from src.A_universal_operations.matrix_operations import matrix_multiplier
-from src.A_universal_operations.matrix_operations.matrix_multiplier import multiply_matrix_universal, \
+from src.A_universal_operations.matrix_operations.matrix_multiplier import multiply_matrix_a_and_matrix_b_universal, \
     multiply_column_a_and_column_b, get_sum_of_column, multiply_column_and_scaler, add_column_a_and_column_b
 from src.A_universal_operations.matrix_operations.matrix_operation_functions import *
 

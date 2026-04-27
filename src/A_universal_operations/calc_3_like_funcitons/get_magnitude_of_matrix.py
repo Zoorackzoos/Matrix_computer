@@ -3,8 +3,8 @@ import math
 from src.A_universal_operations.calc_3_like_funcitons.convert_to_divided_by_sqrt import convert_to_divided_by_sqrt
 
 
-def get_magnitude(matrix, tab_amount="\t"):
-    print(tab_amount,"get_magnitude")
+def get_magnitude_of_matrix(matrix, tab_amount="\t"):
+    print(tab_amount,"get_magnitude_of_matrix")
     tab_amount += "\t"
 
     print(tab_amount,matrix)
@@ -29,4 +29,4 @@ if __name__ == "__main__":
             [1,2,3]
         ]
     tab_amount = "\t"
-    get_magnitude(matrix=vector, tab_amount=tab_amount)
+    get_magnitude_of_matrix(matrix=vector, tab_amount=tab_amount)

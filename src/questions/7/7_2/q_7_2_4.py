@@ -1,9 +1,9 @@
-from src.A_universal_operations.calc_3_like_funcitons.get_magnitude import get_magnitude
+from src.A_universal_operations.calc_3_like_funcitons.get_magnitude import get_magnitude_of_matrix
 from src.A_universal_operations.column_float_to_fraction import column_float_to_fraction_string
 from src.A_universal_operations.matrix_operations import matrix_multiplier
 from src.A_universal_operations.matrix_operations.get_subtraction_result_of_two_matrixes import \
     get_subtraction_result_of_two_matrices
-from src.A_universal_operations.matrix_operations.matrix_multiplier import multiply_matrix_universal, \
+from src.A_universal_operations.matrix_operations.matrix_multiplier import multiply_matrix_a_and_matrix_b_universal, \
     multiply_column_a_and_column_b, get_sum_of_column, multiply_column_and_scaler, add_column_a_and_column_b
 from src.A_universal_operations.matrix_operations.matrix_operation_functions import *
 from src.A_universal_operations.float_to_fraction import float_to_fraction_string
@@ -76,7 +76,7 @@ def q_7_2_4(tab_amount="\t"):
 
     some_bullshit = add_column_a_and_column_b(column_a=y, column_b=sum_of_scaled_u1_and_scaled_u2,tab_amount=tab_amount)
     print(tab_amount,some_bullshit)
-    magnitude_some_bullshit = get_magnitude(matrix=[some_bullshit],tab_amount=tab_amount)
+    magnitude_some_bullshit = get_magnitude_of_matrix(matrix=[some_bullshit], tab_amount=tab_amount)
     print(float_to_fraction_string(magnitude_some_bullshit))
 
 if __name__ == "__main__":
