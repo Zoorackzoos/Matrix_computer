@@ -10,6 +10,6 @@ def matrix_float_to_fraction_string(matrix, tab_amount="\t"):
 
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
-            result_matrix[i][j] = float_to_fraction_string(matrix[i][j])
+            result_matrix[i][j] = float_to_fraction_string(result_matrix[i][j])
 
     return result_matrix

@@ -74,6 +74,7 @@ if __name__ == "__main__":
     get_dot_product(matrix_a, matrix_b, tab_amount)
     """
 
+    """
     x = \
         [
             [-5],
@@ -86,6 +87,21 @@ if __name__ == "__main__":
             [5],
             [-3]
         ]
+    """
+    x = \
+    [
+        [-8],
+        [2],
+        [-2],
+        [0]
+    ]
+    y = \
+    [
+        [-7],
+        [1],
+        [11],
+        [-3]
+    ]
     tab_amount = "\t"
     variable_lol = get_dot_product(matrix_a=x, matrix_b=y, tab_amount=tab_amount)
     print(variable_lol)
