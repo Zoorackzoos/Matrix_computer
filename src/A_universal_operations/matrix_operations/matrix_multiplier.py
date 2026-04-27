@@ -149,6 +149,10 @@ def add_column_a_and_column_b(column_a, column_b, tab_amount="\t"):
     added_column = []
 
     for i in range(len(column_a)):
-        added_column.append(float_to_fraction_string(column_a[i] + column_b[i]))
+        print(tab_amount,i)
+        print(tab_amount,column_a[i])
+        print(tab_amount,column_b[i])
+        print()
+        added_column.append(column_a[i] + column_b[i])
 
     return added_column
