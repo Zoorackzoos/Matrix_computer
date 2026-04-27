@@ -1,7 +1,7 @@
 from src.A_universal_operations.matrix_operations.REF_and_RREF_getters.get_REF import *
 from src.A_universal_operations.matrix_operations.get_diagonal_values_from_matrix import get_diagonal_values_from_matrix
 
-def get_determinant_two_by_two_matrix(matrix_in_question, tab_amount="\t"):
+def get_matrix_determinant_two_by_two_matrix(matrix_in_question, tab_amount="\t"):
     """
 
     :param matrix_in_question: a 2 x 2 matrix
@@ -15,7 +15,7 @@ def get_determinant_two_by_two_matrix(matrix_in_question, tab_amount="\t"):
     print(tab_amount,return_value)
     return return_value
 
-def get_determinant_based_on_list_of_fed_values(list_of_fed_values, tab_amount="\t"):
+def get_matrix_determinant_based_on_list_of_fed_values(list_of_fed_values, tab_amount="\t"):
     print(tab_amount,list_of_fed_values)
     tab_amount += "\t"
     total = 1
@@ -25,7 +25,7 @@ def get_determinant_based_on_list_of_fed_values(list_of_fed_values, tab_amount="
     tab_amount += "\t"
     print(tab_amount,total)
 
-def get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(list_with_REF_matrix_and_scaler_operations_in_it,tab_amount="\t"):
+def get_matrix_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(list_with_REF_matrix_and_scaler_operations_in_it, tab_amount="\t"):
     print(tab_amount,"get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it")
     tab_amount += "\t"
 
@@ -71,6 +71,6 @@ if __name__ == "__main__":
     print_matrix(REF_of_matrix_in_question_and_its_determinant_values[0],tab_amount=tab_amount)
     print(tab_amount,REF_of_matrix_in_question_and_its_determinant_values[1])
 
-    determinant = get_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(list_with_REF_matrix_and_scaler_operations_in_it=REF_of_matrix_in_question_and_its_determinant_values,tab_amount=tab_amount)
+    determinant = get_matrix_determinant_based_on_list_with_REF_matrix_and_scaler_operations_in_it(list_with_REF_matrix_and_scaler_operations_in_it=REF_of_matrix_in_question_and_its_determinant_values, tab_amount=tab_amount)
     print(tab_amount,determinant)
     print("end of program")

@@ -1,6 +1,4 @@
-from traceback import print_list
-
-from src.A_universal_operations.calc_3_like_funcitons.get_if_three_matrices_are_perpandicular import \
+from src.A_universal_operations.matrix_operations.get_if_three_matrices_are_perpandicular import \
     get_if_three_matrices_are_perpendicular
 from src.A_universal_operations.display.print_matrix import print_matrix
 

@@ -1,14 +1,12 @@
-from copy import deepcopy
+from src.A_universal_operations.matrix_operations.matrix_operation_functions import *
 
-
-def multiply_matrix_by_scaler(matrix_a, scaler, tab_amount="\t"):
-    print(tab_amount, "multiply_matrix_by_scaler")
+def multiply_matrix_by_scaler(matrix, scaler, tab_amount="\t"):
+    print(tab_amount,"multiply_matrix_by_scaler")
     tab_amount += "\t"
 
-    result_matrix = deepcopy(matrix_a)
+    for i in range(len(matrix)):
+        scale_row_from_number(matrix=matrix,row_in_question=i,number=scaler,tab_amount=tab_amount)
 
-    for i in range(len(matrix_a)):
-        for j in range(len(matrix_a[0])):
-            result_matrix[i][j] = result_matrix[i][j] * scaler
-
-    return result_matrix
+    #the way python pointers work is wack as fuck.
+    #this should be ok though :-/
+    return matrix

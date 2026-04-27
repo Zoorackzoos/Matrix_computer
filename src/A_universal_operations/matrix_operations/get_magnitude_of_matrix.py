@@ -1,8 +1,5 @@
 import math
 
-from src.A_universal_operations.calc_3_like_funcitons.convert_to_divided_by_sqrt import convert_to_divided_by_sqrt
-
-
 def get_magnitude_of_matrix(matrix, tab_amount="\t"):
     print(tab_amount,"get_magnitude_of_matrix")
     tab_amount += "\t"

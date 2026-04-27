@@ -15,7 +15,7 @@ def get_if_three_matrices_are_perpendicular(matrix_a, matrix_b, matrix_c, tab_am
     print(tab_amount,"get_if_three_matrices_are_perpendicular")
     tab_amount += "\t"
 
-    ab = get_dot_product(matrix_a=matrix_a, matrix_b=matrix_b,tab_amount=tab_amount)
+    #ab = get_dot_product(matrix_a=matrix_a, matrix_b=matrix_b,tab_amount=tab_amount)
     ac = get_dot_product(matrix_a=matrix_a, matrix_b=matrix_c,tab_amount=tab_amount)
     bc = get_dot_product(matrix_a=matrix_b, matrix_b=matrix_c,tab_amount=tab_amount)
 

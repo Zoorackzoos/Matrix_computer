@@ -2,6 +2,12 @@ from src.A_universal_operations.display.print_matrix import *
 from src.A_universal_operations.display.print_lambda_algebra_matrix import *
 import sympy as sp
 
+"""
+i need to figure out how to make the computer do algebra. 
+when i write this i'm in the process of a refactor.
+these functions are flimsy as fuck. 
+"""
+
 def get_det_based_with_lambda_vars_in_3x3_matrix(matrix_with_lambdas, tab_amount ="\t"):
     """
 

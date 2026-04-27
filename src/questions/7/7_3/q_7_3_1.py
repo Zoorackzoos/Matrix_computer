@@ -1,11 +1,9 @@
-from src.A_universal_operations.calc_3_like_funcitons.get_dot_product import get_dot_product
-from src.A_universal_operations.calc_3_like_funcitons.get_magnitude_of_column import get_magnitude_of_column
-from src.A_universal_operations.calc_3_like_funcitons.get_magnitude_of_matrix import get_magnitude_of_matrix
-from src.A_universal_operations.column_float_to_fraction import column_float_to_fraction_string
-from src.A_universal_operations.matrix_float_to_fraction import matrix_float_to_fraction_string
-from src.A_universal_operations.matrix_operations.matrix_multiplier import *
-from src.A_universal_operations.display.print_matrix import print_matrix_frac, print_matrix
+from src.A_universal_operations.get_dot_product import get_dot_product
+from src.A_universal_operations.matrix_operations.get_magnitude_of_matrix import get_magnitude_of_matrix
+from src.A_universal_operations.matrix_operations.matrix_float_to_fraction import matrix_float_to_fraction_string
+from src.A_universal_operations.display.print_matrix import print_matrix
 from src.A_universal_operations.display.float_to_fraction_string import float_to_fraction_string
+from src.A_universal_operations.matrix_operations.multiply_matrix_by_scaler import multiply_matrix_by_scaler
 
 
 def q_7_3_1(tab_amount = "\t"):
@@ -37,7 +35,7 @@ def q_7_3_1(tab_amount = "\t"):
                     0 ]
     this is v1
     """
-    v1 = multiply_matrix_by_scaler(matrix_a=x,scaler=1/magnitude_of_x)
+    v1 = multiply_matrix_by_scaler(matrix=x,scaler=1/magnitude_of_x)
     v1_stringified = matrix_float_to_fraction_string(matrix=v1, tab_amount=tab_amount)
     """
      print_matrix
@@ -55,8 +53,8 @@ def q_7_3_1(tab_amount = "\t"):
             /
             y * u1 
     """
-
-
+    product_xy = get_dot_product(matrix_a=y,matrix_b=x,tab_amount=tab_amount)
+    print(tab_amount,product_xy)
 
 if __name__ == "__main__":
     tab_amount = "\t"

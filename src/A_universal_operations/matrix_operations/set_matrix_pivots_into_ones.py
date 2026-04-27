@@ -2,7 +2,7 @@ from src.A_universal_operations.matrix_operations.matrix_operation_functions imp
 
 def set_matrix_pivots_into_ones(matrix_in_question, tab_amount="\t"):
     """
-    sets all of the pivots into ones. this creates verbose and sometimes gross floats in the non pivot rows
+    sets all the pivots into ones. this creates verbose and sometimes gross floats in the non pivot rows
 
     :param matrix_in_question:
     :param tab_amount:
