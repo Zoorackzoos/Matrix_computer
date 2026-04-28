@@ -8,6 +8,10 @@ from src.A_universal_operations.matrix_operations.multiply_matrix_a_and_matrix_b
 from src.A_universal_operations.matrix_operations.multiply_matrix_by_scaler import multiply_matrix_by_scaler
 from src.A_universal_operations.matrix_operations.get_subtraction_result_of_two_matrixes import *
 
+"""
+this shole problem is asking if a column has a gresastest commen denominaotr
+so computing this is useless
+"""
 
 def get_if_sum_row0_row_1_equal_row3(matrix,tab_amount="\t"):
     """
